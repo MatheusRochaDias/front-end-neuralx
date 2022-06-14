@@ -350,9 +350,6 @@ export default function Home() {
         <Flex>
           <Box></Box>
         </Flex>
-        <Box>
-          <Box></Box>
-        </Box>
       </Flex>
     </Box>
   );
