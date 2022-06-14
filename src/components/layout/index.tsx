@@ -12,8 +12,7 @@ export function Layout({ children, marginB }: layoutProps) {
       <Box
         maxW="1400px"
         mx="auto"
-        w={{ base: "95%", md: "90%", lg: "85%" }}
-        mb={marginB || "100px"}
+        w={{ base: "95%", md: "95%", lg: "100%", xl: "85%" }}
       >
         {children}
       </Box>

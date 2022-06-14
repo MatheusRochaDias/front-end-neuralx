@@ -37,9 +37,10 @@ export function Header() {
       maxW="1400px"
       mx="auto"
       w={{ base: "95%", md: "90%", lg: "85%" }}
+      py="30px"
     >
       <Box>
-        <Image src={Logo.src} w="80px" h="80px" />
+        <Image src={Logo.src} w="100px" h="120px" alt="Logo do neuralX" />
       </Box>
       <Flex
         color={"#fff"}

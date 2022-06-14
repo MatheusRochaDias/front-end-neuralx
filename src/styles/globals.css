@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+#id{
+  background-image:
+    linear-gradient(to right, rgba(31, 7, 72, 0.891), rgba(0, 0, 0, 0.369)),
+    url("../../public/assets/bg.png");
+  background-size: cover;
+  position: relative;
+}
+
+#tsparticles{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
