@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -18,12 +18,14 @@ import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 
 export default function Home() {
-  const [isLarger, Deskt, xl, lg, test] = useMediaQuery([
+  const [current, setCurrent] = useState(0);
+  const [isLarger, Deskt, xl, lg, test, isText] = useMediaQuery([
     "(min-width: 1320px)",
     "(max-width: 1350px)",
     "(max-width: 1400px)",
     "(max-width: 1036px)",
     "(max-width: 1378px)",
+    "(min-width: 1220px)",
   ]);
   const particlesInit = async (main: Engine) => {
     // console.log(main);
@@ -33,6 +35,30 @@ export default function Home() {
   const particlesLoaded = async (container: Container) => {
     // console.log(container);
   };
+
+  const isHeight = window.screen.height;
+  const isWidth = window.screen.width;
+  const data = [
+    {
+      image: Img.src,
+      title: "Visão Computacional",
+      description:
+        "Id consectetur purus ut faucibus pulvinar elementum integer enim. A arcu cursus vitae congue mauris rhoncus aeneanconsectetur purus ut faucibus pulvinar elementum integer enim. A arcu cursus vitae congue mauris rhoncus aenean",
+    },
+    {
+      image: Ia.src,
+      title: "Deep learning",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ad tempore consequuntur nihil reprehenderit aliquam minus quidem at maxime dolorum voluptatibus, eum suscipit minima natus. Porro pariatur aliquam quam velit.",
+    },
+    {
+      image:
+        "https://www.totvs.com/wp-content/uploads/2019/06/o-que-e-inteligencia-artificial.jpg",
+      title: "Inteligencia Artificial",
+      description:
+        "Magna sit amet purus gravida. Sit amet porttitor eget dolor morbi nonLectus vestibulum mattis ullamcorper velit sed ullamcorper.Diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Dui faucibus in ornare quam viverra.Posuere ac consequat semper viverra.",
+    },
+  ];
 
   return (
     <Box w="full">
@@ -84,7 +110,11 @@ export default function Home() {
           mb={{ base: "0", xl: "-150px" }}
           flexDir={{ base: "column", lg: "row" }}
         >
-          <Box w={{ base: "80%", xl: "40%" }} mr={{ base: "10px", xl: "0" }}>
+          <Flex
+            flexDir={"column"}
+            w={{ base: "100%", xl: "40%" }}
+            mx={{ base: "0", md: "20px" }}
+          >
             <Text color="#F61067">lorem ipsum</Text>
             <Text color="#30233D" fontSize={"45px"} cursor={"pointer"}>
               Lorem ipsum
@@ -111,8 +141,8 @@ export default function Home() {
             >
               Saber mais
             </Button>
-          </Box>
-          <Flex w="full" justify={"right"}>
+          </Flex>
+          <Flex w="full" justify={{ base: "center", lg: "right" }}>
             <Box zIndex={1000} mt="40px">
               <Image
                 src={Ia.src}
@@ -125,14 +155,14 @@ export default function Home() {
               justify={"center"}
               align="center"
               bg="#5E239D"
-              h={{ base: "70%", lg: "60%" }}
-              ml={{ base: "-35px", xl: "-70px" }}
-              w={{ base: "50%", xl: "40%" }}
+              h={{ base: "300px", lg: "60%" }}
+              ml={{ base: "-205px", lg: "-35px", xl: "-70px" }}
+              w={{ base: "300px", xl: "45%" }}
             >
               <Text
                 color="#fff"
                 px={{ base: "50px", xl: "100px" }}
-                ml={{ base: "10px", xl: "50px" }}
+                ml={{ base: "60px", xl: "50px" }}
                 fontSize={{ base: "15px", md: "20px", xl: "30px" }}
               >
                 Torne-se mais competitivo e eficiente
@@ -141,17 +171,8 @@ export default function Home() {
           </Flex>
         </Flex>
       </Layout>
-      <Flex maxW="1400px" mx="auto" w={{ base: "100%", xl: "85%" }}>
-        <Box
-          display={{ base: "none", lg: "flex" }}
-          h="full"
-          // bg="red"
-          // maxH={{
-          //   base: "",
-          //   lg: isLarger ? "800px" : "700px",
-          //   xl: isLarger ? "800px" : "700px",
-          // }}
-        >
+      <Flex maxW="1400px" mx="auto" w={{ base: "100%", xl: "85%" }} h="full">
+        <Box display={{ base: "none", lg: "flex" }} h="full">
           <Flex w="full" justify={"space-between"}>
             <Flex
               justify={"right"}
@@ -170,7 +191,7 @@ export default function Home() {
                 textTransform="uppercase"
                 fontStyle={"normal"}
               >
-                Visão computacional
+                {data[current].title}
               </Text>
             </Flex>
             <Flex
@@ -183,11 +204,12 @@ export default function Home() {
                 mt={{
                   base: "",
                   lg: lg ? "30px" : "",
-                  xl: xl ? (test ? "70px" : "40px") : "0",
                 }}
-                src={Img.src}
+                src={data[current].image}
                 width={{ base: "300px", lg: lg ? "390px" : "410px", xl: "80%" }}
-                h={{ base: "400px", lg: "100%", xl: xl ? "95%" : "100%" }}
+                h={{ base: "450px", lg: "100%" }}
+                maxH="500px"
+                minH={"500px"}
                 alt="IA"
               />
             </Flex>
@@ -200,8 +222,9 @@ export default function Home() {
             alignItems="center"
             zIndex={1000}
             mb="-800px"
+            mt={isWidth === 1358 ? "280px" : ""}
           >
-            <Text mr="20px">1/3</Text>
+            <Text mr="20px">{`${current + 1}/${data.length}`}</Text>
             <Flex>
               <Flex
                 mr="20px"
@@ -212,6 +235,13 @@ export default function Home() {
                 border="1px solid #ffffff"
                 borderRadius={50}
                 p="5px"
+                cursor={"pointer"}
+                onClick={() => {
+                  if (current === 0) {
+                    return;
+                  }
+                  setCurrent((item) => item - 1);
+                }}
               >
                 <FiArrowLeft color="#fff" size={20} />
               </Flex>
@@ -224,6 +254,13 @@ export default function Home() {
                 border="1px solid #ffffff"
                 borderRadius={50}
                 p="5px"
+                cursor={"pointer"}
+                onClick={() => {
+                  if (current >= data.length - 1) {
+                    return;
+                  }
+                  setCurrent((item) => item + 1);
+                }}
               >
                 <FiArrowRight color="#fff" size={20} />
               </Flex>
@@ -232,20 +269,19 @@ export default function Home() {
         </Box>
         <Flex
           bg="#30124E"
-          // h="700px"
           w="full"
-          // h="100% - 20%"
-          // justify={"center"}
-          // align="center"
-          mb={{ base: "-100px", lg: "-200px", xl: "-200px" }}
+          mb={{ base: "-100px", lg: lg ? "-120px" : "-200px", xl: "-200px" }}
           color="#fff"
-          pl={{ base: "50px", xl: Deskt ? "0" : "250px" }}
+          pl={{ base: "50px", xl: Deskt ? "0" : "81px" }}
+          p={{ base: "50px", lg: "0" }}
         >
           <Box
             // p="0px 90px 0px 30px"
-            pr={{ base: "0", lg: "90px" }}
-            pl={{ base: "0", lg: "90px" }}
-            mt="120px"
+            pr={{ base: "0", lg: lg ? "30px" : test ? "60px" : "90px" }}
+            pl={{ base: "0", lg: test ? "150px" : "90px" }}
+            mt={{ base: "0", lg: "150px" }}
+            w={{ base: "full", xl: "85%" }}
+            ml={{ base: "0", xl: "auto" }}
           >
             <Text
               fontSize={"12.6px"}
@@ -260,7 +296,7 @@ export default function Home() {
               Tecnologia
             </Text>
             <Text
-              fontSize={{ base: "25px", lg: "45px" }}
+              fontSize={{ base: "25px", lg: !isText ? "35px" : "45px" }}
               textAlign={{ base: "center", lg: "right" }}
               fontWeight="500"
               color="#FCFCFC"
@@ -268,21 +304,22 @@ export default function Home() {
               fontStyle={"normal"}
               my={{ base: "0", lg: "17px" }}
             >
-              Visão Computacional
+              {data[current].title}
             </Text>
             <Text
-              fontSize={{ base: "16px", lg: "18px" }}
+              fontSize={{ base: "16px", lg: !isText ? "17.5px" : "18px" }}
               textAlign={{ base: "center", lg: "right" }}
               fontWeight="800"
               color="#FCFCFC"
               lineHeight={"29px"}
               fontStyle={"normal"}
-              my={{ base: "0", lg: "17px" }}
-              mb={{ base: "0", lg: "55px" }}
+              // my={{ base: "0", lg: !isText ? "7px" : "17px" }}
+              mb={{ base: "10px", lg: !isText ? "20px" : "35px" }}
             >
               Eget nunc scelerisque viverra mauris in aliquam. Dignissim sodales
               ut eu sem integer vitae. Libero nunc consequat interdum varius.
             </Text>
+
             <Text
               fontSize={{ base: "16px", lg: "18px" }}
               textAlign={{ base: "center", lg: "right" }}
@@ -290,47 +327,9 @@ export default function Home() {
               color="#FCFCFC"
               lineHeight={"29px"}
               fontStyle={"normal"}
-              my={{ base: "0", lg: "20px" }}
+              // my={{ base: "0", lg: !isText ? "7px" : "20px" }}
             >
-              Magna sit amet purus gravida. Sit amet porttitor eget dolor morbi
-              non.
-            </Text>
-            <Text
-              fontSize={{ base: "16px", lg: "18px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="400"
-              color="#FCFCFC"
-              lineHeight={"29px"}
-              fontStyle={"normal"}
-              my={{ base: "0", lg: "20px" }}
-            >
-              Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
-            </Text>
-            <Text
-              fontSize={{ base: "16px", lg: "18px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="400"
-              color="#FCFCFC"
-              lineHeight={"29px"}
-              fontStyle={"normal"}
-              my={{ base: "0", lg: "20px" }}
-            >
-              Diam phasellus vestibulum lorem sed risus ultricies tristique
-              nulla.
-            </Text>
-            <Text
-              fontSize={{ base: "16px", lg: "18px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="400"
-              color="#FCFCFC"
-              lineHeight={"29px"}
-              fontStyle={"normal"}
-              my={{ base: "0", lg: "20px" }}
-              // textUnderlineOffset={}
-            >
-              Diam phasellus vestibulum lorem sed risus ultricies tristique
-              nulla. Dui faucibus in ornare quam viverra. Posuere ac ut
-              consequat semper viverra.
+              {data[current].description}
             </Text>
             <Flex w="full" justify={{ base: "center", lg: "right" }}>
               <Button
@@ -338,7 +337,7 @@ export default function Home() {
                 borderRadius={"20px"}
                 w="197px"
                 color="#fff"
-                mt="50px"
+                mt={!isText ? "30px" : "50px"}
               >
                 Saber mais
               </Button>
