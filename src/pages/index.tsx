@@ -6,26 +6,32 @@ import {
   Image,
   Button,
   useMediaQuery,
+  Heading,
 } from "@chakra-ui/react";
 import Ia from "../../public/assets/IA.png";
 import Img from "../../public/assets/imgCarousel.png";
+import User from "../../public/assets/user.png";
+import User2 from "../../public/assets/user2.png";
+import User3 from "../../public/assets/user3.png";
 import { Header, Layout } from "~/components";
-import { configParticles } from "~/components/mocks/particles";
+import { Particles as configParticles } from "~/components/mocks/particles";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
-  const [isLarger, Deskt, xl, lg, test, isText] = useMediaQuery([
+  const [isLarger, Deskt, xl, lg, xl1378, isText, smQuote] = useMediaQuery([
     "(min-width: 1320px)",
     "(max-width: 1350px)",
     "(max-width: 1400px)",
     "(max-width: 1036px)",
     "(max-width: 1378px)",
     "(min-width: 1220px)",
+    "(max-width: 878px)",
   ]);
   const particlesInit = async (main: Engine) => {
     // console.log(main);
@@ -36,7 +42,6 @@ export default function Home() {
     // console.log(container);
   };
 
-  const isHeight = window.screen.height;
   const isWidth = window.screen.width;
   const data = [
     {
@@ -64,19 +69,24 @@ export default function Home() {
     <Box w="full">
       <Box
         id="id"
-        h={{ base: "500px", md: "650px", lg: "800px", xl: "900px" }}
-        borderEndStartRadius={"40%"}
+        h={{ base: "700px", md: "650px", lg: "800px", xl: "900px" }}
+        borderEndStartRadius={{ base: "100px", sm: "200px", lg: "40%" }}
+        // pb={{ base: "70px", md: "" }}
       >
         <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
           style={{ width: "100%", height: "100%", position: "absolute" }}
-          options={configParticles}
+          options={configParticles()}
         />
         <Header />
         <Layout>
-          <Box w={{ base: "80%", lg: "70%", xl: "50%" }} mt="80px">
+          <Box
+            w={{ base: "80%", lg: "70%", xl: "50%" }}
+            // mt="80px"
+            // pt="180px"
+          >
             <Box w={"full"}>
               <Text color={"#fff"}>Lorem ipsum</Text>
               <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
@@ -142,8 +152,12 @@ export default function Home() {
               Saber mais
             </Button>
           </Flex>
-          <Flex w="full" justify={{ base: "center", lg: "right" }}>
-            <Box zIndex={1000} mt="40px">
+          <Flex
+            w="full"
+            justify={{ base: "center", lg: "right" }}
+            mt={{ base: "20px", lg: "0px" }}
+          >
+            <Box zIndex={1000} mt={{ base: "30px", md: "40px" }}>
               <Image
                 src={Ia.src}
                 width={{ base: "70%", lg: "full" }}
@@ -153,20 +167,30 @@ export default function Home() {
             </Box>
             <Flex
               justify={"center"}
+              flexDir="column"
               align="center"
               bg="#5E239D"
-              h={{ base: "300px", lg: "60%" }}
-              ml={{ base: "-205px", lg: "-35px", xl: "-70px" }}
-              w={{ base: "300px", xl: "45%" }}
+              h={{ base: "200px", sm: "300px", lg: "60%" }}
+              ml={{
+                base: "-125px",
+                sm: "-215px",
+                lg: "-35px",
+                xl: "-70px",
+              }}
+              w={{ base: "", sm: "300px", xl: "45%" }}
             >
+              <ImQuotesLeft size={smQuote ? 18 : 50} color="#f4f4ed9f" />
+
               <Text
                 color="#fff"
-                px={{ base: "50px", xl: "100px" }}
-                ml={{ base: "60px", xl: "50px" }}
+                px={{ base: "20px", md: "50px", xl: "100px" }}
+                ml={{ base: "60px", sm: "80px", xl: "50px" }}
                 fontSize={{ base: "15px", md: "20px", xl: "30px" }}
+                my="10px"
               >
                 Torne-se mais competitivo e eficiente
               </Text>
+              <ImQuotesRight size={smQuote ? 18 : 50} color="#f4f4ed9f" />
             </Flex>
           </Flex>
         </Flex>
@@ -238,7 +262,7 @@ export default function Home() {
                 cursor={"pointer"}
                 onClick={() => {
                   if (current === 0) {
-                    return;
+                    setCurrent(3);
                   }
                   setCurrent((item) => item - 1);
                 }}
@@ -257,7 +281,7 @@ export default function Home() {
                 cursor={"pointer"}
                 onClick={() => {
                   if (current >= data.length - 1) {
-                    return;
+                    setCurrent(-1);
                   }
                   setCurrent((item) => item + 1);
                 }}
@@ -270,15 +294,36 @@ export default function Home() {
         <Flex
           bg="#30124E"
           w="full"
+          // h={{ base: "700px", md: "500px", lg: "100%" }}
           mb={{ base: "-100px", lg: lg ? "-120px" : "-200px", xl: "-200px" }}
           color="#fff"
           pl={{ base: "50px", xl: Deskt ? "0" : "81px" }}
-          p={{ base: "50px", lg: "0" }}
+          p={{ base: "50px 10px", md: "50px 20px", lg: "0" }}
+          align="center"
         >
+          <Flex
+            display={{ base: "flex", lg: "none" }}
+            align={"center"}
+            justify="center"
+            w="30px"
+            h={"30px"}
+            border="1px solid #ffffff"
+            borderRadius={50}
+            p="5px"
+            cursor={"pointer"}
+            onClick={() => {
+              if (current === 0) {
+                setCurrent(3);
+              }
+              setCurrent((item) => item - 1);
+            }}
+          >
+            <FiArrowLeft color="#fff" size={20} />
+          </Flex>
           <Box
             // p="0px 90px 0px 30px"
-            pr={{ base: "0", lg: lg ? "30px" : test ? "60px" : "90px" }}
-            pl={{ base: "0", lg: test ? "150px" : "90px" }}
+            pr={{ base: "0", lg: lg ? "30px" : xl1378 ? "60px" : "90px" }}
+            pl={{ base: "0", lg: xl1378 ? "150px" : "90px" }}
             mt={{ base: "0", lg: "150px" }}
             w={{ base: "full", xl: "85%" }}
             ml={{ base: "0", xl: "auto" }}
@@ -343,13 +388,126 @@ export default function Home() {
               </Button>
             </Flex>
           </Box>
+          <Flex
+            display={{ base: "flex", lg: "none" }}
+            align={"center"}
+            justify="center"
+            w="30px"
+            h={"30px"}
+            border="1px solid #ffffff"
+            borderRadius={50}
+            p="5px"
+            cursor={"pointer"}
+            onClick={() => {
+              if (current >= data.length - 1) {
+                setCurrent(-1);
+              }
+              setCurrent((item) => item + 1);
+            }}
+          >
+            <FiArrowRight color="#fff" size={20} />
+          </Flex>
         </Flex>
       </Flex>
-      <Flex w="full" bg="#150433" h="800px">
-        <Flex>
-          <Box></Box>
-        </Flex>
-      </Flex>
+      <Box w="full" bg="#150433" id="contact" h="1800px" pt="300px">
+        <Layout>
+          <Box>
+            <Heading
+              textAlign={"center"}
+              color="#fff"
+              w="40%"
+              mx="auto"
+              mb="80px"
+            >
+              Seja uma empresa adepta da Inteligência artificial
+            </Heading>
+            <Flex w="full" justify={"center"} align="center">
+              <Box>
+                <Image
+                  mr="50px"
+                  src={User2.src}
+                  backgroundSize="cover"
+                  w="150px"
+                  h="150px"
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                  id="image-users"
+                />
+              </Box>
+              <Box>
+                <Image
+                  src={User.src}
+                  backgroundSize="cover"
+                  w="300px"
+                  h="300px"
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                />
+              </Box>
+              <Box>
+                <Image
+                  ml="50px"
+                  src={User3.src}
+                  backgroundSize="cover"
+                  w="90px"
+                  h="90px"
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                  id="image-users1"
+                />
+              </Box>
+            </Flex>
+            <Flex w="50%" mx="auto" justify={"center"} align="center" mt="50px">
+              <Flex
+                align={"center"}
+                justify="center"
+                w="25px"
+                h={"25px"}
+                border="1px solid #F61067"
+                borderRadius={50}
+                p="5px"
+                cursor={"pointer"}
+                onClick={() => {
+                  if (current === 0) {
+                    setCurrent(3);
+                  }
+                  setCurrent((item) => item - 1);
+                }}
+              >
+                <FiArrowLeft color="#F61067" size={18} />
+              </Flex>
+              <Box
+                color="#fff"
+                fontSize={"24px"}
+                w="50%"
+                mx="80px"
+                textAlign={"center"}
+              >
+                Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing
+                tristique.
+              </Box>
+              <Flex
+                align={"center"}
+                justify="center"
+                w="25px"
+                h={"25px"}
+                border="1px solid #F61067"
+                borderRadius={50}
+                p="5px"
+                cursor={"pointer"}
+                onClick={() => {
+                  if (current >= data.length - 1) {
+                    setCurrent(-1);
+                  }
+                  setCurrent((item) => item + 1);
+                }}
+              >
+                <FiArrowRight color="#F61067" size={18} />
+              </Flex>
+            </Flex>
+          </Box>
+        </Layout>
+      </Box>
     </Box>
   );
 }
