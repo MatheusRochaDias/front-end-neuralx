@@ -13,6 +13,8 @@ import Img from "../../public/assets/imgCarousel.png";
 import User from "../../public/assets/user.png";
 import User2 from "../../public/assets/user2.png";
 import User3 from "../../public/assets/user3.png";
+import { data } from "~/components/mocks/carouselServices";
+import { dataComments } from "~/components/mocks/carouselComments";
 import { Header, Layout } from "~/components";
 import { Particles as configParticles } from "~/components/mocks/particles";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
@@ -22,8 +24,18 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 
+interface ISeries {
+  name: string;
+  data: number;
+}
+
+interface ITest {
+  categories: Array<string>;
+  series: ISeries[];
+}
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [currentComment, setCurrentComment] = useState(0);
   const [isLarger, Deskt, xl, lg, xl1378, isText, smQuote] = useMediaQuery([
     "(min-width: 1320px)",
     "(max-width: 1350px)",
@@ -43,28 +55,6 @@ export default function Home() {
   };
 
   const isWidth = window.screen.width;
-  const data = [
-    {
-      image: Img.src,
-      title: "Visão Computacional",
-      description:
-        "Id consectetur purus ut faucibus pulvinar elementum integer enim. A arcu cursus vitae congue mauris rhoncus aeneanconsectetur purus ut faucibus pulvinar elementum integer enim. A arcu cursus vitae congue mauris rhoncus aenean",
-    },
-    {
-      image: Ia.src,
-      title: "Deep learning",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ad tempore consequuntur nihil reprehenderit aliquam minus quidem at maxime dolorum voluptatibus, eum suscipit minima natus. Porro pariatur aliquam quam velit.",
-    },
-    {
-      image:
-        "https://www.totvs.com/wp-content/uploads/2019/06/o-que-e-inteligencia-artificial.jpg",
-      title: "Inteligencia Artificial",
-      description:
-        "Magna sit amet purus gravida. Sit amet porttitor eget dolor morbi nonLectus vestibulum mattis ullamcorper velit sed ullamcorper.Diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Dui faucibus in ornare quam viverra.Posuere ac consequat semper viverra.",
-    },
-  ];
-
   return (
     <Box w="full">
       <Box
@@ -409,22 +399,30 @@ export default function Home() {
           </Flex>
         </Flex>
       </Flex>
-      <Box w="full" bg="#150433" id="contact" h="1800px" pt="300px">
+      <Box
+        w="full"
+        bg="#150433"
+        id="contact"
+        h="1800px"
+        pt={{ base: "170px", lg: "300px" }}
+      >
         <Layout>
-          <Box>
+          <Box mx={{ base: "10px", lg: "" }}>
             <Heading
               textAlign={"center"}
               color="#fff"
-              w="40%"
+              w={{ base: "100%", lg: "40%" }}
               mx="auto"
-              mb="80px"
+              mb={{ base: "20px", lg: "80px" }}
             >
               Seja uma empresa adepta da Inteligência artificial
             </Heading>
             <Flex w="full" justify={"center"} align="center">
-              <Box>
+              <Box display={{ base: "none", lg: "flex" }}>
                 <Image
-                  mr="50px"
+                  onClick={() => setCurrentComment(0)}
+                  cursor="pointer"
+                  mr="20px"
                   src={User2.src}
                   backgroundSize="cover"
                   w="150px"
@@ -433,20 +431,10 @@ export default function Home() {
                   alt="Carousel de imagens"
                   id="image-users"
                 />
-              </Box>
-              <Box>
                 <Image
-                  src={User.src}
-                  backgroundSize="cover"
-                  w="300px"
-                  h="300px"
-                  borderRadius={"50%"}
-                  alt="Carousel de imagens"
-                />
-              </Box>
-              <Box>
-                <Image
-                  ml="50px"
+                  onClick={() => setCurrentComment(1)}
+                  cursor="pointer"
+                  mt="100px"
                   src={User3.src}
                   backgroundSize="cover"
                   w="90px"
@@ -456,53 +444,107 @@ export default function Home() {
                   id="image-users1"
                 />
               </Box>
+              <Box>
+                <Image
+                  src={dataComments[currentComment].image}
+                  backgroundSize="cover"
+                  w={{ base: "200px", lg: "300px" }}
+                  h={{ base: "200px", lg: "300px" }}
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                />
+              </Box>
+              <Box display={{ base: "none", lg: "flex" }}>
+                <Image
+                  onClick={() => setCurrentComment(2)}
+                  cursor="pointer"
+                  mt="100px"
+                  src={User3.src}
+                  backgroundSize="cover"
+                  w="90px"
+                  h="90px"
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                  id="image-users1"
+                />
+                <Image
+                  onClick={() => setCurrentComment(3)}
+                  cursor="pointer"
+                  src={User2.src}
+                  mt="200px"
+                  backgroundSize="cover"
+                  w="150px"
+                  h="150px"
+                  borderRadius={"50%"}
+                  alt="Carousel de imagens"
+                  id="image-users"
+                />
+              </Box>
             </Flex>
-            <Flex w="50%" mx="auto" justify={"center"} align="center" mt="50px">
+            <Flex
+              w={{ base: "100%", lg: "50%" }}
+              mx="auto"
+              justify={"center"}
+              align="center"
+              mt={{ base: "10px", lg: "50px" }}
+            >
               <Flex
                 align={"center"}
                 justify="center"
-                w="25px"
-                h={"25px"}
                 border="1px solid #F61067"
                 borderRadius={50}
+                w="28px"
+                h={"28px"}
+                _hover={{
+                  bg: "#F61067",
+                  color: "#fff",
+                }}
+                color="#F61067"
                 p="5px"
                 cursor={"pointer"}
                 onClick={() => {
-                  if (current === 0) {
-                    setCurrent(3);
+                  if (currentComment === 0) {
+                    setCurrentComment(dataComments?.length);
                   }
-                  setCurrent((item) => item - 1);
+                  setCurrentComment((item) => item - 1);
                 }}
               >
-                <FiArrowLeft color="#F61067" size={18} />
+                <FiArrowLeft size={18} />
               </Flex>
               <Box
                 color="#fff"
-                fontSize={"24px"}
-                w="50%"
-                mx="80px"
+                fontSize={{ base: "17px", lg: "24px" }}
+                w={{ base: "90%", lg: "70%" }}
+                mx={{ base: "5px", lg: "80px" }}
                 textAlign={"center"}
               >
-                Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing
-                tristique.
+                {dataComments[currentComment].comment}
+                <Text fontSize={"12px"} mt="15px">
+                  {dataComments[currentComment].author}
+                </Text>
               </Box>
               <Flex
                 align={"center"}
                 justify="center"
-                w="25px"
-                h={"25px"}
+                w="28px"
+                h={"28px"}
+                _hover={{
+                  bg: "#F61067",
+                  color: "#fff",
+                }}
+                color="#F61067"
                 border="1px solid #F61067"
                 borderRadius={50}
                 p="5px"
                 cursor={"pointer"}
                 onClick={() => {
-                  if (current >= data.length - 1) {
-                    setCurrent(-1);
+                  if (currentComment >= dataComments.length - 1) {
+                    setCurrentComment(-1);
                   }
-                  setCurrent((item) => item + 1);
+                  setCurrentComment((item) => item + 1);
                 }}
               >
-                <FiArrowRight color="#F61067" size={18} />
+                <FiArrowRight size={18} />
               </Flex>
             </Flex>
           </Box>
