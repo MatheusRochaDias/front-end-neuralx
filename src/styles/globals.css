@@ -21,7 +21,50 @@ a {
   background-size: cover;
   position: relative;
 }
-
+#about{
+  background-image:
+  linear-gradient(90deg, #150433 1.89%, rgba(0, 0, 0, 0.37) 133.64%),
+  linear-gradient(90deg, #5E239D 0%, rgba(196, 196, 196, 0) 56.77%),
+  url("../../public/assets/aboutImage.png");
+  background-size: cover;
+  position: relative;
+}
+#saas{
+  background-image:
+  url("../../public/assets/servicesImage.png");
+  background-size: cover;
+  position: relative;  
+}
+#marketplace{
+  background-image:
+  url("../../public/assets/marketplaceImage.png");
+  background-size: cover;
+  position: relative;  
+}
+#rpa{
+  background-image:
+  url("../../public/assets/rpaImage.png");
+  background-size: cover;
+  position: relative;  
+}
+#computerVision{
+  background-image:
+  url("../../public/assets/computerVisionImage.png");
+  background-size: cover;
+  position: relative;  
+}
+#conversationalInterface{
+  background-image:
+  url("../../public/assets/conversationalInterfaceImage.png");
+  background-size: cover;
+  position: relative;  
+}
+#contact{
+  background-image:
+  url("../../public/assets/contactImage.png");
+  background-size: cover;
+  position: relative;  
+}
 #tsparticles{
   width: 100%;
   height: 100%;

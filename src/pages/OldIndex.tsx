@@ -23,8 +23,6 @@ import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
-import { Footer } from "~/components/footer";
-import { ContactForm } from "~/components/contactForm";
 
 interface ISeries {
   name: string;
@@ -63,16 +61,23 @@ export default function Home() {
         id="id"
         h={{ base: "700px", md: "650px", lg: "800px", xl: "900px" }}
         borderEndStartRadius={{ base: "100px", sm: "200px", lg: "40%" }}
-      // pb={{ base: "70px", md: "" }}
+        // pb={{ base: "70px", md: "" }}
       >
-
-        <Header />
-
+       
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          style={{ width: "100%", height: "100%", position: "relative" }}
+          options={configParticles()}
+        />
+          <Header />
+       
         <Layout>
           <Box
             w={{ base: "80%", lg: "70%", xl: "50%" }}
-          // mt="80px"
-          // pt="180px"
+            // mt="80px"
+            // pt="180px"
           >
             <Box w={"full"}>
               <Text color={"#fff"}>Lorem ipsum</Text>
@@ -287,7 +292,6 @@ export default function Home() {
           pl={{ base: "50px", xl: Deskt ? "0" : "81px" }}
           p={{ base: "50px 10px", md: "50px 20px", lg: "0" }}
           align="center"
-          zIndex={10000}
         >
           <Flex
             display={{ base: "flex", lg: "none" }}
@@ -315,7 +319,6 @@ export default function Home() {
             mt={{ base: "0", lg: "150px" }}
             w={{ base: "full", xl: "85%" }}
             ml={{ base: "0", xl: "auto" }}
-            zIndex={10000}
           >
             <Text
               fontSize={"12.6px"}
@@ -361,7 +364,7 @@ export default function Home() {
               color="#FCFCFC"
               lineHeight={"29px"}
               fontStyle={"normal"}
-            // my={{ base: "0", lg: !isText ? "7px" : "20px" }}
+              // my={{ base: "0", lg: !isText ? "7px" : "20px" }}
             >
               {data[current].description}
             </Text>
@@ -402,12 +405,11 @@ export default function Home() {
         w="full"
         bg="#150433"
         id="contact"
+        h="1800px"
         pt={{ base: "170px", lg: "300px" }}
       >
         <Layout>
-          <Box mx={{ base: "10px", lg: "" }}
-          pb="40px"
-          >
+          <Box mx={{ base: "10px", lg: "" }}>
             <Heading
               textAlign={"center"}
               color="#fff"
@@ -549,8 +551,6 @@ export default function Home() {
             </Flex>
           </Box>
         </Layout>
-        <ContactForm />
-        <Footer />
       </Box>
     </Box>
   );
