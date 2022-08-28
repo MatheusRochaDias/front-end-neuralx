@@ -49,7 +49,7 @@ export function ContactForm() {
                   <Text color="#ADB5EA">Telefone</Text>
                   <Flex>
                     <InputGroup>
-                      <InputLeftElement children='+55' />
+                      <InputLeftElement children={'+55'} />
                       <Input variant='flushed' pl="50px" type='tel' placeholder='Telefone' />
                     </InputGroup>
                   </ Flex>
