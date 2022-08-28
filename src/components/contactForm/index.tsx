@@ -10,7 +10,7 @@ export function ContactForm() {
       p={{ base: "10px", md: "50px 20px", lg: "0" }}
       align="center"
     >
-      {/* <Box
+      <Box
         py={{ base: "30px", md: "150px" }}
         bg="#30124E"
         mt={{ base: "0", lg: "2.375rem" }}
@@ -76,7 +76,7 @@ export function ContactForm() {
             </Box>
           </GridItem>
         </SimpleGrid>
-      </Box > */}
+      </Box >
     </Flex >
   )
 }
