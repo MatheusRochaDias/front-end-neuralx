@@ -44,14 +44,16 @@ export function ContactForm() {
                   <Text color="#ADB5EA">Nome completo</Text>
                   <Input variant='flushed' placeholder='Nome' />
                 </Box>
-                <Box>
+                 <Box>
                   <Text color="#ADB5EA">Telefone</Text>
+                  <>
                   <InputGroup>
                     <InputLeftElement children='+55' />
                     <Input variant='flushed' pl="50px" type='tel' placeholder='Telefone' />
                   </InputGroup>
-                </Box>
-                {/*
+                </>
+                  </Box>
+
                 <Box py={{ base: "10px", md: "30px" }}>
                   <Text color="#ADB5EA">E-mail</Text>
                   <Input variant='flushed' placeholder='E-mail' />
@@ -65,7 +67,7 @@ export function ContactForm() {
                     <Text color="#ADB5EA">Como podemos ajudar?</Text>
                     <Input variant='flushed' placeholder='Escreva sua mensagem' />
                   </Box>
-                </GridItem> */}
+                </GridItem>
               </SimpleGrid>
               <Center pt={{ base: "30px", md: "60px" }}>
                 <Button bg="#3347CA" borderRadius="500px" _hover={{ bg: "#F61067" }}  >
