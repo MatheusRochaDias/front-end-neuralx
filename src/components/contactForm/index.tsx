@@ -47,12 +47,12 @@ export function ContactForm() {
                 </Box>
                 <Box>
                   <Text color="#ADB5EA">Telefone</Text>
-                  <Stack>
+                  <Flex>
                     <InputGroup>
                       <InputLeftElement children='+55' />
                       <Input variant='flushed' pl="50px" type='tel' placeholder='Telefone' />
                     </InputGroup>
-                  </ Stack>
+                  </ Flex>
                 </Box>
 
                 <Box py={{ base: "10px", md: "30px" }}>
