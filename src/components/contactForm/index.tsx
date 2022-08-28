@@ -37,10 +37,10 @@ export function ContactForm() {
               </Box>
             </Center>
           </GridItem>
-          {/* <GridItem colSpan={[10, 11]} >
+          <GridItem colSpan={[10, 11]} >
             <Box as="form" w={{ base: "100%", md: "90%" }} >
               <SimpleGrid mt={{ base: "10", md: "-60px" }} pr={{ base: "10px", md: "55px" }} pl={{ base: "10px", md: "0" }} columns={2} gap={{ base: "4", md: "10" }}>
-                <Box>
+                {/* <Box>
                   <Text color="#ADB5EA">Nome completo</Text>
                   <Input variant='flushed' placeholder='Nome' />
                 </Box>
@@ -65,7 +65,7 @@ export function ContactForm() {
                     <Text color="#ADB5EA">Como podemos ajudar?</Text>
                     <Input variant='flushed' placeholder='Escreva sua mensagem' />
                   </Box>
-                </GridItem>
+                </GridItem> */}
               </SimpleGrid>
               <Center pt={{ base: "30px", md: "60px" }}>
                 <Button bg="#3347CA" borderRadius="500px" _hover={{ bg: "#F61067" }}  >
@@ -73,7 +73,7 @@ export function ContactForm() {
                 </Button>
               </Center>
             </Box>
-          </GridItem> */}
+          </GridItem>
         </SimpleGrid>
       </Box >
     </Flex >
