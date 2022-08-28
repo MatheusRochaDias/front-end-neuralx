@@ -1,4 +1,4 @@
-import { Box, Button, Image, Center, Flex, GridItem, SimpleGrid, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Image, Center, Flex, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import router from "next/router";
 import { BsEnvelope, BsFacebook, BsInstagram, BsPhone, BsYoutube } from "react-icons/bs";
 import Logo from "/public/assets/Neural.png";
@@ -38,7 +38,7 @@ export function Footer() {
               <Box pt='1.5rem'>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../")}> Home </Text>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../about")}> Quem somos </Text>
-                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services/saas")}> Serviços </Text>
+                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services")}> Serviços </Text>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../contact")}> Contato </Text>
               </Box>
             </GridItem>

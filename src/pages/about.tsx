@@ -17,46 +17,12 @@ import func4 from "../../public/assets/func4.png"
 import func5 from "../../public/assets/func5.png"
 import { Footer } from "~/components/footer";
 import { Doubt } from "~/components/doubt";
+import HeaderContainer from "~/components/headerContainer";
 
 export default function About() {
   return (
     <Box w="full">
-      <Box
-        id="about"
-        h={{ base: "700px", md: "650px", lg: "800px", xl: "900px" }}
-        borderEndStartRadius={{ base: "100px", sm: "200px", lg: "40%" }}
-      // pb={{ base: "70px", md: "" }}
-      >
-        <Header />
-        <Layout>
-          <Box
-            w={{ base: "80%", lg: "70%", xl: "50%" }}
-          >
-            <Box w={"full"}>
-              <Text color={"#fff"}>Lorem ipsum</Text>
-              <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
-                <Text color={"#fff"}>
-                  Somos uma Startup{" "}
-                  <span style={{ color: "#F61067" }}>
-                    de Inteligência Artificial
-                  </span>
-                </Text>
-              </Text>
-            </Box>
-            <Box color={"#fff"} border="1px solid #ffffff29" p="20px" mt="50px">
-              <Flex w=" full" justify={"space-between"} align="center">
-                <Text>
-                  Velit laoreet id donec ultrices. Ut lectus arcu bibendum
-                  varius.
-                </Text>
-                <Box border="1px solid #ffffff29" borderRadius={50} p="10px">
-                  <BsArrowRight color="#fff" size={20} />
-                </Box>
-              </Flex>
-            </Box>
-          </Box>
-        </Layout>
-      </Box>
+      <HeaderContainer id="about" firstText="Somos uma Startup " secondText="de Inteligência Artificial" />
       <Layout>
         <Box
           pt="3rem"
@@ -78,7 +44,7 @@ export default function About() {
       <Box bg='#FFFFFF' h={{ base: "160px", md: '244px' }} py='70px' >
         <Flex>
           <Layout>
-            <Box
+            {/* <Box
               w={{ base: "100%", xl: "85%" }}
               mx={{ base: "0", md: "20px" }}>
               <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
@@ -87,7 +53,7 @@ export default function About() {
               <Text color="#30233D" fontSize={{ base: "2rem", md: "2.813rem" }} >
                 Lorem ispum
               </Text>
-            </Box>
+            </Box> */}
           </Layout>
           <Image
             display={{ base: "none", md: "block" }}
@@ -106,12 +72,13 @@ export default function About() {
             h='324px'
           >
             <Center gap={{ base: 20, md: 128 }}>
-              <Text color="#FCFCFC" fontWeight='500' fontSize={{ base: '1.4rem', md: '1.688rem' }}>
-                Lorem ipsum lorem<br /> ipsum
+              <Text color="#FCFCFC" fontWeight='500' w={'8.25rem'} fontSize={{ base: '1.4rem', md: '1.688rem' }}>
+                Missão
               </Text>
 
               <Text color="#FCFCFC" fontWeight='400' fontSize={{ base: '1rem', md: '1.125rem' }}>
-                Id consectetur purus ut faucibus pulvinar <br />elementum integer enim. A arcu cursus<br /> vitae congue mauris rhoncus aenean.
+                A Neural busca melhorar a rotina das empresas<br /> otimizando os seus processos internos dando<br />
+                mais agilidade, segurança e performance, desta<br /> forma possam focar nas qualidades dos seus <br />serviços aumentando suas receitas.
               </Text>
             </Center>
           </Flex>
@@ -124,12 +91,11 @@ export default function About() {
             h='324px'
           >
             <Center gap={{ base: 20, md: 128 }}>
-              <Text color="#FCFCFC" fontWeight='500' fontSize={{ base: '1.4rem', md: '1.688rem' }}>
-                Lorem ipsum lorem<br /> ipsum
+              <Text color="#FCFCFC" fontWeight='500' w={'8.25rem'} fontSize={{ base: '1.4rem', md: '1.688rem' }}>
+                Visão
               </Text>
-
               <Text color="#FCFCFC" fontWeight='400' fontSize={{ base: '1rem', md: '1.125rem' }}>
-                Id consectetur purus ut faucibus pulvinar <br />elementum integer enim. A arcu cursus<br /> vitae congue mauris rhoncus aenean.
+                Ser referência em inteligência artificial<br /> oferecendo ferramentas para nossos clientes <br />melhorarem seus processos e buscarem a excelência.
               </Text>
             </Center>
           </Flex>
@@ -142,12 +108,12 @@ export default function About() {
             h='324px'
           >
             <Center gap={{ base: 20, md: 128 }}>
-              <Text color="#FCFCFC" fontWeight='500' fontSize={{ base: '1.4rem', md: '1.688rem' }}>
-                Lorem ipsum lorem<br /> ipsum
+              <Text color="#FCFCFC" fontWeight='500' w={'8.25rem'} fontSize={{ base: '1.4rem', md: '1.688rem' }}>
+                Valores
               </Text>
 
               <Text color="#FCFCFC" fontWeight='400' fontSize={{ base: '1rem', md: '1.125rem' }}>
-                Id consectetur purus ut faucibus pulvinar <br />elementum integer enim. A arcu cursus<br /> vitae congue mauris rhoncus aenean.
+                Trabalhamos com simplicidade, transparência, <br /> inovação e democratização da tecnologia.
               </Text>
             </Center>
           </Flex>
@@ -157,7 +123,7 @@ export default function About() {
         <Text color="#F61067" textAlign='center' fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
           CONHEÇA NOSSO TIME DE COLABORADORES
         </Text>
-        <Text color="#30233D" textAlign='center' fontSize={{base:"1.4rem",md:"2.813rem"}} py='12px'>
+        <Text color="#30233D" textAlign='center' fontSize={{ base: "1.4rem", md: "2.813rem" }} py='12px'>
           O que fazemos mais do que você pode <br />
           imagine, acredite em nós.
         </Text>

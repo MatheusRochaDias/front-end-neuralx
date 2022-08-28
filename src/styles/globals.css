@@ -14,96 +14,383 @@ a {
 * {
   box-sizing: border-box;
 }
-#id{
-  background-image:
-    linear-gradient(to right, rgba(31, 7, 72, 0.891), rgba(0, 0, 0, 0.369)),
+#id {
+  background-image: linear-gradient(
+      to right,
+      rgba(31, 7, 72, 0.891),
+      rgba(0, 0, 0, 0.369)
+    ),
     url("../../public/assets/bg.png");
   background-size: cover;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
   position: relative;
 }
-#about{
-  background-image:
-  linear-gradient(90deg, #150433 1.89%, rgba(0, 0, 0, 0.37) 133.64%),
-  linear-gradient(90deg, #5E239D 0%, rgba(196, 196, 196, 0) 56.77%),
-  url("../../public/assets/aboutImage.png");
+#about {
+  background-image: linear-gradient(
+      90deg,
+      #150433 1.89%,
+      rgba(0, 0, 0, 0.37) 133.64%
+    ),
+    linear-gradient(90deg, #5e239d 0%, rgba(196, 196, 196, 0) 56.77%),
+    url("../../public/assets/aboutImage.png");
+  background-size: cover;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+#saas {
+  background-image: url("../../public/assets/servicesImage.png");
   background-size: cover;
   position: relative;
 }
-#saas{
-  background-image:
-  url("../../public/assets/servicesImage.png");
+#marketplace {
+  background-image: url("../../public/assets/marketplaceImage.png");
   background-size: cover;
-  position: relative;  
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#marketplace{
-  background-image:
-  url("../../public/assets/marketplaceImage.png");
+#rpa {
+  background-image: url("../../public/assets/rpaImage.png");
   background-size: cover;
-  position: relative;  
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#rpa{
-  background-image:
-  url("../../public/assets/rpaImage.png");
+#computerVision {
+  background-image: url("../../public/assets/computerVisionImage.png");
   background-size: cover;
-  position: relative;  
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#computerVision{
-  background-image:
-  url("../../public/assets/computerVisionImage.png");
+#conversationalInterface {
+  background-image: url("../../public/assets/conversationalInterfaceImage.png");
   background-size: cover;
-  position: relative;  
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#conversationalInterface{
-  background-image:
-  url("../../public/assets/conversationalInterfaceImage.png");
+#products{
+  background-image: url("../../public/assets/productsPage.png");
   background-size: cover;
-  position: relative;  
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#contact{
-  background-image:
-  url("../../public/assets/contactImage.png");
-  background-size: cover;
-  position: relative;  
+#contact {
+  background-image: url("../../public/assets/contactImage.png");
+  background-size: 100%;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-#tsparticles{
+#tsparticles {
   width: 100%;
   height: 100%;
   position: absolute;
 }
-#contact{
-  background-image:
-    linear-gradient(to top, rgba(31, 7, 72, 0.891), rgba(0, 0, 0, 0.369)),
+#contact {
+  background-image: linear-gradient(
+      to top,
+      rgba(31, 7, 72, 0.891),
+      rgba(0, 0, 0, 0.369)
+    ),
     url("../../public/assets/bgSection\ \(1\).png");
   background-size: cover;
 }
 
-#image-users{
+#image-users {
   animation: float 7s ease-in-out infinite;
 }
 
-@keyframes float{
+@keyframes float {
   0% {
-    transform:  translateY(0);
+    transform: translateY(0);
   }
-  50%{
+  50% {
     transform: translateY(-25px);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
-#image-users1{
+#image-users1 {
   animation: float1 6s ease-in-out infinite;
 }
 
-@keyframes float1{
+@keyframes float1 {
   0% {
-    transform:  translateY(-30px);
+    transform: translateY(-30px);
   }
-  50%{
+  50% {
     transform: translateY(-45px);
   }
-  100%{
+  100% {
     transform: translateY(-30px);
+  }
+}
+
+#globalBox1 {
+  width: 100%;
+  height: 300px;
+}
+
+#globalBox2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  -moz-box-pack: center;
+  justify-content: center;
+}
+
+#globalBox3 {
+  min-width: 100%;
+  flex-shrink: 0;
+  animation-name: box3;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-duration: 50.86s;
+}
+
+@keyframes box3 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+#globalBox4 {
+  left: 0;
+  top: 0;
+  display: inline-block;
+  position: relative;
+}
+#globalBox5 {
+  transform: scale(0.9838);
+}
+
+#globalBox6 {
+  display: flex;
+  width: 160px;
+  height: 160px;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  background-color: transparent;
+}
+#globalBox7 {
+  position: relative;
+  width: 0px;
+  height: 40px;
+}
+
+#boxA8 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -56.5685px;
+  margin-top: -56.5685px;
+  width: 113.137px;
+  height: 113.137px;
+  animation: 0s linear 0s infinite normal none running box8;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes box8 {
+  0% {
+    transform: rotate(29deg);
+  }
+  100% {
+    transform: rotate(-331deg);
+  }
+}
+#boxA9 {
+  display: inline-block;
+  animation: 0s linear 0s infinite normal none running box9;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes box9 {
+  0% {
+    transform: rotate(-29deg);
+  }
+  100% {
+    transform: rotate(331deg);
+  }
+}
+
+#globalBox10 {
+  width: 40px;
+}
+
+#boxB8 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -56.5685px;
+  margin-top: -56.5685px;
+  width: 113.137px;
+  height: 113.137px;
+  animation: 0s linear 0s infinite normal none running boxB8;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxB8 {
+  0% {
+    transform: rotate(340deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+#boxB9 {
+  display: inline-block;
+  animation: 0s linear 0s infinite normal none running boxB9;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxB9 {
+  0% {
+    transform: rotate(-340deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+#boxC8 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -56.5685px;
+  margin-top: -56.5685px;
+  width: 113.137px;
+  height: 113.137px;
+  animation: 0s linear 0s infinite normal none running boxC8;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxC8 {
+  0% {
+    transform: rotate(330deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+#boxC9 {
+  display: inline-block;
+  animation: 0s linear 0s infinite normal none running boxC9;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxC9 {
+  0% {
+    transform: rotate(-330deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+#boxD8 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -56.5685px;
+  margin-top: -56.5685px;
+  width: 113.137px;
+  height: 113.137px;
+  animation: 0s linear 0s infinite normal none running boxD8;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxD8 {
+  0% {
+    transform: rotate(222deg);
+  }
+  100% {
+    transform: rotate(582deg);
+  }
+}
+
+#boxD9 {
+  display: inline-block;
+  animation: 0s linear 0s infinite normal none running boxD9;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxD9 {
+  0% {
+    transform: rotate(138deg);
+  }
+  100% {
+    transform: rotate(-222deg);
+  }
+}
+
+#boxE8 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -56.5685px;
+  margin-top: -56.5685px;
+  width: 113.137px;
+  height: 113.137px;
+  animation: 0s linear 0s infinite normal none running boxE8;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxE8 {
+  0% {
+    transform: rotate(181deg);
+  }
+  100% {
+    transform: rotate(-179deg);
+  }
+}
+
+#boxE9 {
+  display: inline-block;
+  animation: 0s linear 0s infinite normal none running boxE9;
+  animation-duration: 0s;
+  background-color: transparent;
+  animation-duration: 16.7552s;
+}
+@keyframes boxE9 {
+  0% {
+    transform: rotate(-181deg);
+  }
+  100% {
+    transform: rotate(179deg);
   }
 }

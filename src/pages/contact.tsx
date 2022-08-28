@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Flex,
   Text,
   Image,
   SimpleGrid,
@@ -9,12 +8,11 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { Header, Layout } from "~/components";
-import { BsArrowRight, BsEnvelope, BsPhone } from "react-icons/bs";
+import { BsEnvelope, BsPhone } from "react-icons/bs";
 import contactImage from "../../public/assets/contactImage.png"
 import mapPin from "../../public/assets/mapPin.png"
 import contactBackground from "../../public/assets/contactBackground.png"
 import { Footer } from "~/components/footer";
-import { Doubt } from "~/components/doubt";
 import { ContactForm } from "~/components/contactForm";
 
 export default function Contact() {
@@ -35,17 +33,16 @@ export default function Contact() {
               <Text fontSize='3.375rem' color="#F61067">
                 Contato
               </Text>
-              <Text fontSize='1.125rem' color="#F4F4ED" fontWeight="800" py="2rem">
-                LOREM IPSUM LOREM IPSUM
-              </Text>
             </Box>
           </Box>
         </Layout>
       </Box>
+
+
       <Layout>
         <SimpleGrid columns={2} py={{ base: "20px", md: "0" }}>
           <GridItem colSpan={{ base: 2, md: 1 }} >
-            <Box pt={{ base: '30px', md: '144px' }} pl={{ base: "0", md: '147px' }} >
+            <Box pt={{ base: '30px', md: '50px' }} pb={{ base: '30px', md: '50px' }} pl={{ base: "0", md: '147px' }} >
               <Box w={{ base: "100%", md: '50%' }} >
                 <Text fontSize='1.688rem' fontWeight='500'>
                   Construímos ótimos<br /> negócios
@@ -62,7 +59,7 @@ export default function Contact() {
                   <GridItem colSpan={7} >
                     <Box>
                       <Text color="#30233D" fontWeight="800" fontSize='1.125rem' lineHeight="1.813rem" pb="24px">
-                        LOREM IPSUM
+                        Endereço
                       </Text>
                       <Text color="#776C82" fontWeight="500" fontSize='1.125rem' lineHeight="1.813rem">
                         Rua Lexington Street<br />

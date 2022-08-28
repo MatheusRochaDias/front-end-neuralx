@@ -1,59 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
   Text,
   Image,
   SimpleGrid,
+  UnorderedList,
+  ListItem,
+  Center,
 } from "@chakra-ui/react";
 import { Header, Layout } from "~/components";
-import { BsArrowRight } from "react-icons/bs";
 import imgCarousel from "../../../../public/assets/imgCarousel.png"
 import atom from "../../../../public/assets/atom.png"
 import { Footer } from "~/components/footer";
 import { Doubt } from "~/components/doubt";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { data } from "~/components/mocks/carouselRPA";
+import HeaderContainer from "~/components/headerContainer";
+import rpaCard from "../../../../public/assets/rpaCard.png"
 
 export default function Rpa() {
+  const [current, setCurrent] = useState(0);
+
   return (
     <Box w="full">
-      <Box
-        id="rpa"
-        h={{ base: "700px", md: "650px", lg: "800px", xl: "900px" }}
-        borderEndStartRadius={{ base: "100px", sm: "200px", lg: "40%" }}
-      >
-        <Header />
-        <Layout>
-          <Box
-            w={{ base: "80%", lg: "70%", xl: "50%" }}
-          >
-            <Box w={"full"}>
-              <Text color={"#fff"}>Lorem ipsum</Text>
-              <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
-                <Text color={"#fff"}>
-                  Ganhe agilidade em{" "}
-                  <span style={{ color: "#F61067" }}>
-                    seus processos internos
-                  </span>
-                </Text>
-              </Text>
-            </Box>
-            <Box color={"#fff"} border="1px solid #ffffff29" p="20px" mt="50px">
-              <Flex w=" full" justify={"space-between"} align="center">
-                <Text>
-                  Velit laoreet id donec ultrices. Ut lectus arcu bibendum
-                  varius.
-                </Text>
-                <Box border="1px solid #ffffff29" borderRadius={50} p="10px">
-                  <BsArrowRight color="#fff" size={20} />
-                </Box>
-              </Flex>
-            </Box>
-          </Box>
-        </Layout>
-      </Box>
+      <HeaderContainer id="rpa" firstText="Ganhe agilidade em " secondText="seus processos internos" />
       <Layout>
         <Box
-          py={{base:"1rem", md:"3rem"}}
+          py={{ base: "1rem", md: "3rem" }}
           w={{ base: "100%", xl: "85%" }}
           mx={{ base: "0", md: "20px" }}
         >
@@ -64,8 +38,9 @@ export default function Rpa() {
             RPA
           </Text>
 
-          <Text my="20px" color="#30233D" fontSize={{base:"1rem", md:"1.688rem"}} >
-            Apparently we had reached a great height in the<br /> atmosphere, for the sky was a dead black, and the stars<br />had ceased to twinkle.   </Text>
+          <Text my="20px" color="#30233D" fontSize={{ base: "1rem", md: "1.688rem" }} >
+            Automação robótica de processos. Com RPA, os usuários de software criam <br />robôs de software, ou “bots”, que podem aprender, simular e executar<br /> processos de negócios baseados em regras. Pense nos “bots” como uma força de<br /> trabalho digital que pode interagir com qualquer sistema ou aplicativo.
+          </Text>
         </Box>
       </Layout>
       <Flex bg="#30124E" my="auto" py="40px" display={{ base: "flex", md: "none" }}>
@@ -81,7 +56,7 @@ export default function Rpa() {
           textTransform="uppercase"
           fontStyle={"normal"}
         >
-          Visão computacional
+          RPA
         </Text>
         <Box px="15px">
           <Text
@@ -91,202 +66,250 @@ export default function Rpa() {
             color="#FCFCFC"
             pb='1.325rem'
           >
-            Eget nunc scelerisque viverra mauris in aliquam. </Text>
+            A automação de processos robóticos tem um efeito
+            de bola de neve positivo nas operações e resultados
+            de negócios. </Text>
           <Text
             fontSize='1rem'
             textAlign="right"
             fontWeight="400"
             color="#FCFCFC"
           >
-            Magna sit amet purus gravida. Sit amet porttitor<br /> eget dolor morbi non.<br />
-            Lectus vestibulum mattis ullamcorper velit sed<br /> ullamcorper.<br />
-            Diam phasellus vestibulum lorem sed risus ultricies<br /> tristique nulla. Dui faucibus in ornare quam viverra.<br /><br />
-
+            RPA oferece benefícios empresariais mensuráveis logo de cara,
+            como redução de custos, maior precisão, velocidade de entrega.
+            <br />
+            E continua a agregar valor à medida que ganha impulso e se espalha
+            pela organização.
+            <br />
+            RPA melhora os resultados de negócios, como a satisfação do
+            cliente, e permite vantagens competitivas ao liberar as pessoas para
+            fazer o que fazem melhor, resolver problemas.
           </Text>
         </Box>
       </Flex>
-      <Flex display={{ base: "none", md: "flex" }} maxW="1400px" mx="auto" w={{ base: "100%", xl: "85%" }} h="full" pb='80px'>
-        <Box display={{ base: "none", lg: "flex" }} h="full">
-          <Flex w="full" justify={"space-between"}>
-            <Flex
-              justify={"right"}
-              align="center"
-              mt={{ base: "", lg: "50px" }}
-              pr="20px"
-            >
-              <Text
-                style={{ writingMode: "vertical-lr" }}
-                // textAlign="right"
-                fontSize={"12.6px"}
-                letterSpacing={"6px"}
-                fontWeight="800"
-                color="#F61067"
-                lineHeight={"26px"}
-                textTransform="uppercase"
-                fontStyle={"normal"}
-              >
-                Visão computacional
-              </Text>
-            </Flex>
-            <Flex
-              w="500px"
-              mt="70px"
-              mr={{ base: "-350px", xl: "-380px" }}
-              zIndex={1000}
-            >
-              <Image
-                src={imgCarousel.src}
-                width={{ base: "300px", lg: "410px", xl: "80%" }}
-                h={{ base: "450px", lg: "100%" }}
-                maxH="500px"
-                minH={"500px"}
-                alt="IA"
-              />
-            </Flex>
-          </Flex>
-        </Box>
-        <Flex
-          ml="80px"
-          bg="#30124E"
-          w="full"
-          mb={{ base: "-100px", lg: "-100px", xl: "-100px" }}
-          color="#fff"
-          p={{ base: "50px 10px", md: "50px 20px", lg: "0" }}
-          align="center"
-        >
-          <Box
-            mt={{ base: "0", lg: "-100px" }}
-            w={{ base: "full", xl: "75%" }}
-            ml={{ base: "0", xl: "0" }}
-            justifyContent='left'
-          >
+
+
+
+      <Box display={{ base: "none", md: "flex" }}>
+        <Layout>
+          <Flex>
             <Text
-              fontSize='2.813rem'
-              textAlign="right"
-              fontWeight="500"
-              color="#FCFCFC"
-              pb='1rem'
-            >
-              Visão Computacional
-            </Text>
-            <Text
-              fontSize='1rem'
-              textAlign="right"
+              my="auto"
+              style={{ writingMode: "vertical-lr" }}
+              // textAlign="right"
+              fontSize={"12.6px"}
+              letterSpacing={"6px"}
               fontWeight="800"
-              color="#FCFCFC"
-              pb='1.325rem'
+              color="#F61067"
+              lineHeight={"26px"}
+              textTransform="uppercase"
+              fontStyle={"normal"}
             >
-              Eget nunc scelerisque viverra mauris in aliquam.<br /> Dignissim sodales ut eu sem integer vitae. Libero <br />nunc consequat interdum varius.
+              RPA
             </Text>
-            <Text
-              fontSize='1rem'
-              textAlign="right"
-              fontWeight="400"
-              color="#FCFCFC"
-            >
-              Magna sit amet purus gravida. Sit amet porttitor<br /> eget dolor morbi non.<br /><br />
-              Lectus vestibulum mattis ullamcorper velit sed<br /> ullamcorper.<br /><br />
-              Diam phasellus vestibulum lorem sed risus ultricies<br /> tristique nulla. Dui faucibus in ornare quam viverra.<br /><br />
-              Posuere ac ut consequat semper viverra.
-            </Text>
-          </Box>
-        </Flex>
-      </Flex>
+            <Image
+              my="auto"
+              src={rpaCard.src}
+              width={{ base: "300px", lg: "410px", xl: "40%" }}
+              alt="IA"
+              maxH="500px"
+              minH={"500px"}
+              zIndex={1}
+            />
+            <Box bg="#30124E" ml="-300px" >
+              <Box >
+                <Center
+                  ml="300"
+                  w="100%"
+                  bg="#30124E"
+                  h="100%"
+                  my="auto"
+                  minH={"600px"}
+                ><Box>
+                    <Text
+                      fontSize='2.813rem'
+                      textAlign="right"
+                      fontWeight="500"
+                      color="#FCFCFC"
+                      pb='1rem'
+                    >
+                      RPA
+                    </Text>
+                    <Text
+                      fontSize='1rem'
+                      textAlign="right"
+                      fontWeight="800"
+                      color="#FCFCFC"
+                      pb='1.325rem'
+                    >
+                      A automação de processos robóticos tem um efeito<br />  de bola de neve positivo nas operações e resultados<br />  de negócios.
+                    </Text>
+                    <Text
+                      fontSize='1rem'
+                      textAlign="right"
+                      fontWeight="400"
+                      color="#FCFCFC"
+                    >
+                      RPA oferece benefícios empresariais mensuráveis logo de cara,<br /> como redução de
+                      custos, maior precisão, velocidade de entrega.<br /><br />
+                      E continua a agregar valor à medida que ganha impulso e se espalha<br /> pela organização. <br /><br />
+                      RPA melhora os resultados de negócios, como a satisfação do <br />cliente, e permite
+                      vantagens competitivas ao liberar as pessoas para<br /> fazer o que fazem melhor, resolver problemas.
+                    </Text>
+                  </Box>
+                </Center>
+              </Box>
+            </Box>
+          </Flex>
+        </Layout>
+      </Box>
+
       <Layout>
         <Box
           pt="5rem"
           w={{ base: "100%", xl: "100%" }}
           mx={{ base: "0", md: "0px" }}
         >
-          <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
-            LOREM IPSUM
-          </Text>
           <Text color="#30233D" fontSize={{ base: "2rem", md: "2.813rem" }} >
-            Benefícios
+            Benefícios e onde Usar
           </Text>
         </Box>
-        <SimpleGrid columns={3} py={{ base: "40px", md: '60px' }} gap={{ base: 5, md: 50 }}>
-          <Box>
+        <SimpleGrid columns={3} py={{ base: "40px", md: '60px' }} gap={{ base: 5, md: 50 }} >
+          <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}
               src={atom.src}
             />
             <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Webdesign
+              Seguros
             </Text>
             <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
+              Reduza custos e melhore a experiencia do cliente
+              <UnorderedList>
+                <ListItem>Gerenciamento de auditoria</ListItem>
+                <ListItem>Atualização das informações do usuário</ListItem>
+                <ListItem>Processo de administração e reclamação</ListItem>
+              </UnorderedList>
             </Text>
           </Box>
 
-          <Box>
+          <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}
               src={atom.src}
             />
             <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Webdev
+              Serviços Bancários
             </Text>
             <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
+              Defina uma nova era nos serviços financeiro, <br />automatizando
+              <UnorderedList>
+                <ListItem>Origens de empréstimos</ListItem>
+                <ListItem>Migração de dados</ListItem>
+                <ListItem>Boas vindas ao cliente</ListItem>
+              </UnorderedList>
             </Text>
           </Box>
 
-          <Box>
+          <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}
               src={atom.src}
             />
             <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Marketing
+              Assistência médica
             </Text>
             <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
+              Melhore a experiência do paciente e aumente a<br /> conformidade, automatizando
+              <UnorderedList>
+                <ListItem>Pré-autorização de pacientes</ListItem>
+                <ListItem>Processamento de processos</ListItem>
+                <ListItem>Registro médico e gerenciamento de dados</ListItem>
+                <ListItem>Analise operacional</ListItem>
+              </UnorderedList>
             </Text>
           </Box>
 
-          <Box>
+          <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}
               src={atom.src}
             />
             <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Webdesign
+              Fabricação
             </Text>
             <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
+              Simplifique seus processos mais complexos,<br /> automatizando
+              <UnorderedList>
+                <ListItem>Conformidade regulatória</ListItem>
+                <ListItem>Gerenciamento de transportes</ListItem>
+                <ListItem>Custo de frete</ListItem>
+              </UnorderedList>
             </Text>
           </Box>
 
-          <Box>
+          <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}
               src={atom.src}
             />
             <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Webdev
+              Setor Público
             </Text>
             <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
+              Impulsione a conectividade e o desempenho,<br /> automatizando
+              <UnorderedList>
+                <ListItem>Processos financeiro</ListItem>
+                <ListItem>Recursos humanos</ListItem>
+                <ListItem>Compras</ListItem>
+              </UnorderedList>
             </Text>
           </Box>
 
-          <Box>
-            <Image
-              height={{ base: "40px", md: '70px' }}
-              src={atom.src}
-            />
-            <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
-              Marketing
-            </Text>
-            <Text color="#776C82" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
-              Eget nulla facilisi etiam dignissim diam quis<br /> enim lobortis scelerisque. Eu feugiat pretium<br /> nibh ipsum consequat nisl vel pretium.
-            </Text>
-          </Box>
         </SimpleGrid>
       </Layout>
+      <Box width='' bg='#150433' mb='30px' py='2rem' h='19rem' display={{ base: 'block', md: 'none' }}>
+        <Layout>
+          <Center justifyContent='space-between'>
+            <Box onClick={() => {
+              if (current === 0) {
+                setCurrent(5);
+              }
+              setCurrent((item) => item - 1);
+            }} cursor='pointer' >
+              <FiArrowLeft color="#fff" size={20} />
+            </Box>
+            <Box w='350px'>
+              <Image
+                height={{ base: "40px", md: '70px' }}
+                src={atom.src}
+                mx='auto'
+              />
+              <Text py='5px' color="#ffffff" textAlign='center' fontWeight='500' lineHeight='2.5rem' fontSize="1.1rem" >
+                {data[current].title}
+              </Text>
+              <Text py='10px' color="#ffffff" fontWeight='400' textAlign='center' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize='1rem' >
+                {data[current].subTitle}
+
+              </Text>
+              <Text color="#ffffff" py='10px' fontWeight='400' textAlign='left' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
+                <UnorderedList>
+                  {data[current].topic.map((topic, index) => <ListItem key={index}><>{topic}</></ListItem>)}
+                </UnorderedList>
+              </Text>
+            </Box>
+            <FiArrowRight color="#fff" size={20} onClick={() => {
+              if (current >= data.length - 1) {
+                setCurrent(-1);
+              }
+              setCurrent((item) => item + 1);
+            }} cursor='pointer' />
+          </Center>
+        </Layout>
+      </Box>
+
       <Doubt />
       <Footer />
-    </Box>
+    </Box >
   );
 }

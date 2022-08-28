@@ -9,22 +9,19 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Ia from "../../public/assets/IA.png";
-import Img from "../../public/assets/imgCarousel.png";
-import User from "../../public/assets/user.png";
 import User2 from "../../public/assets/user2.png";
 import User3 from "../../public/assets/user3.png";
 import { data } from "~/components/mocks/carouselServices";
 import { dataComments } from "~/components/mocks/carouselComments";
-import { Header, Layout } from "~/components";
-import { Particles as configParticles } from "~/components/mocks/particles";
+import {  Layout } from "~/components";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
-import { BsArrowRight } from "react-icons/bs";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
-import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { Footer } from "~/components/footer";
 import { ContactForm } from "~/components/contactForm";
+import router from "next/router";
+import HeaderContainer from "~/components/headerContainer";
 
 interface ISeries {
   name: string;
@@ -59,46 +56,9 @@ export default function Home() {
   const isWidth = window.screen.width;
   return (
     <Box w="full">
-      <Box
-        id="id"
-        h={{ base: "700px", md: "650px", lg: "800px", xl: "900px" }}
-        borderEndStartRadius={{ base: "100px", sm: "200px", lg: "40%" }}
-      // pb={{ base: "70px", md: "" }}
-      >
+     
+      <HeaderContainer id="id" firstText="Ganhe agilidade em " secondText="seus processos internos" />
 
-        <Header />
-
-        <Layout>
-          <Box
-            w={{ base: "80%", lg: "70%", xl: "50%" }}
-          // mt="80px"
-          // pt="180px"
-          >
-            <Box w={"full"}>
-              <Text color={"#fff"}>Lorem ipsum</Text>
-              <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
-                <Text color={"#fff"}>
-                  Ganhe agilidade em{" "}
-                  <span style={{ color: "#F61067" }}>
-                    seus processos internos
-                  </span>
-                </Text>
-              </Text>
-            </Box>
-            <Box color={"#fff"} border="1px solid #ffffff29" p="20px" mt="50px">
-              <Flex w=" full" justify={"space-between"} align="center">
-                <Text>
-                  Velit laoreet id donec ultrices. Ut lectus arcu bibendum
-                  varius.
-                </Text>
-                <Box border="1px solid #ffffff29" borderRadius={50} p="10px">
-                  <BsArrowRight color="#fff" size={20} />
-                </Box>
-              </Flex>
-            </Box>
-          </Box>
-        </Layout>
-      </Box>
       <Layout>
         <Flex
           w="full"
@@ -112,22 +72,15 @@ export default function Home() {
             w={{ base: "100%", xl: "40%" }}
             mx={{ base: "0", md: "20px" }}
           >
-            <Text color="#F61067">lorem ipsum</Text>
+            {/* <Text color="#F61067">lorem ipsum</Text> */}
             <Text color="#30233D" fontSize={"45px"} cursor={"pointer"}>
-              Lorem ipsum
+              NeuralX
             </Text>
             <Text my="20px" color="#30233D" fontSize={"18px"}>
-              Apparently we had reached a great height in the atmosphere, for
-              the sky was a dead black, and the stars had ceased to twinkle.
+              A NeuralX transforma tarefas manuais, lentas e desgastantes em um processo ágil, dinâmico e prático.
             </Text>
             <Text color=" #776C82">
-              Sabe aquelas tarefas que se repetem todos os dias em sua empresa?
-              Tarefas importantíssimas para que o fluxo do trabalho funcione,
-              porem que demandam um tempo muito grande e exigem que um ou mais
-              profissionais estejam atuando exclusivamente nelas? Foi prestando
-              atenção nisso que fez a NeuralX nascer. A NeuralX transforma essas
-              tarefas manuais, lentas e desgastantes em um processo ágil,
-              dinâmico e prático.
+              Sabe aquelas tarefas que se repetem todos os dias em sua empresa? Tarefas importantíssimas para que o fluxo do trabalho funcione, porem que demandam um tempo muito grande e exigem que um ou mais profissionais estejam atuando exclusivamente nelas? Nos da NeuralX temos a tecnologia perfeita para que tais tarefas comecem a ser executadas de forma rápida e eficiente, deixando assim seu funcionário livre para outras tarefas mais relevantes.
             </Text>
             <Button
               bg=" #3347CA"
@@ -135,6 +88,7 @@ export default function Home() {
               w="197px"
               color="#fff"
               mt="80px"
+              _hover={{ bg: "#F61067" }}
             >
               Saber mais
             </Button>
@@ -350,10 +304,7 @@ export default function Home() {
               // my={{ base: "0", lg: !isText ? "7px" : "17px" }}
               mb={{ base: "10px", lg: !isText ? "20px" : "35px" }}
             >
-              Eget nunc scelerisque viverra mauris in aliquam. Dignissim sodales
-              ut eu sem integer vitae. Libero nunc consequat interdum varius.
-            </Text>
-
+              {data[current].subTitle} </Text>
             <Text
               fontSize={{ base: "16px", lg: "18px" }}
               textAlign={{ base: "center", lg: "right" }}
@@ -365,6 +316,9 @@ export default function Home() {
             >
               {data[current].description}
             </Text>
+            <br />
+            <br />
+            Clique em clique em “Saiba Mais” para ver seus benefícios e onde pode ser utilizada.
             <Flex w="full" justify={{ base: "center", lg: "right" }}>
               <Button
                 bg=" #3347CA"
@@ -372,8 +326,10 @@ export default function Home() {
                 w="197px"
                 color="#fff"
                 mt={!isText ? "30px" : "50px"}
+                onClick={() => router.push(data[current].route)}
+                _hover={{ bg: "#F61067" }}
               >
-                Saber mais
+                Saiba Mais
               </Button>
             </Flex>
           </Box>
@@ -406,7 +362,7 @@ export default function Home() {
       >
         <Layout>
           <Box mx={{ base: "10px", lg: "" }}
-          pb="40px"
+            pb="40px"
           >
             <Heading
               textAlign={"center"}

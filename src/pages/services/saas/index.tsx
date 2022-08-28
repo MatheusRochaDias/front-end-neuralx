@@ -230,7 +230,7 @@ export default function Services() {
       </Box>
       <Box bg='#5E239D' pt='60px'>
         <Text color="#F61067" textAlign='center' fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
-          LOREM IPSUM
+          LOREM IPSUMaa
         </Text>
         <Text color="#FFFFFF" textAlign='center' fontSize={{ base: "2rem", md: "2.813rem" }} py='12px'>
           Lorem ipsum dolor sit amet, conse<br />

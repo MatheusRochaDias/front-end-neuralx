@@ -36,11 +36,11 @@ export function Doubt() {
           fontSize='1.125rem'
         // my={{ base: "0", lg: !isText ? "7px" : "17px" }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Entre em contato para tirar suas dúvidas
         </Text>
         <Center pb='2.375rem'  >
           <Button
-            onClick={()=> router.push("../../contact")}
+            onClick={() => router.push("../../contact")}
             py='1.5rem'
             textAlign='center'
             lineHeight='1.375rem'
@@ -48,6 +48,7 @@ export function Doubt() {
             fontWeight="600"
             fontSize='0.875rem'
             borderRadius='31.25rem'
+            _hover={{ bg: "#F61067" }}
 
           ><Text py='0.688rem' px='1rem'>
               ENTRAR EM CONTATO</Text>

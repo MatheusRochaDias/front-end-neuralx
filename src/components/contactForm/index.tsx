@@ -32,7 +32,7 @@ export function ContactForm() {
                 <Text color="#E4E7EC"
                   lineHeight='1.75rem'
                   fontSize='1.125rem'>
-                  Estamos sempre abertos e damos as<br /> boas-vindas e dúvidas que você tenha<br /> para nossa equipe. Se desejar entrar em<br /> contato, preencha o formulário abaixo.<br /> Alguém de nossa equipe entrará em<br /> contato com você em breve.
+                  Preencha o formulário ao lado que um de<br />  nossos atendentes entrará em contato o<br />  mais breve possível.
                 </Text>
               </Box>
             </Center>

@@ -1,10 +1,7 @@
 import React from "react";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import {
-  Avatar,
-  AvatarGroup,
   Box,
-  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -13,7 +10,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  Icon,
   Image,
   Menu,
   MenuButton,
@@ -22,11 +18,9 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Layout } from "~/components";
 import Router from "next/router";
 import Link from "next/link";
-import Logo from "/public/assets/Neural.png";
-import { useHref } from "react-router-dom";
+import Logo from "/public/assets/LogoHorizontal.png";
 import router from "next/router";
 
 export function Header() {
@@ -55,7 +49,6 @@ export function Header() {
       path: "/contact",
     },
   ];
-  const scrollY = window.scrollY;
   return (
     <Flex
       // w="full"
@@ -76,8 +69,8 @@ export function Header() {
       <Box>
         <Image
           src={Logo.src}
-          w={{ base: "60px", lg: "80px", xl: "100px" }}
-          h={{ base: "60px", lg: "90px", xl: "120px" }}
+          w={{ base: "125px", md: "250px", xl: "250px" }}
+          h={{ base: "27px", md: "54px", xl: "54px" }}
           alt="Logo do neuralX"
         />
       </Box>
@@ -91,29 +84,7 @@ export function Header() {
       >
         {routesPath.map((item, i) => (
           <>{
-            item.title === 'Serviços' ? <>
-              <Box h="50px">
-                <Menu  >
-                  <MenuButton >
-                    <Text mb="5px" cursor={"pointer"}>
-                      {item.title}
-                    </Text>
-                  </MenuButton>
-                  <MenuList background={"#ffffff99"}>
-                    <MenuItem color='#000000' onClick={() => router.push('/services/saas')}>Saas</MenuItem>
-                    <MenuItem color='#000000' onClick={() => router.push('/services/marketplace')}>Marketplace</MenuItem>
-                  </MenuList>
-                  {item.path === asPath && (
-                    <Box
-                      w={item.path === "/" && asPath ? "80%" : "50%"}
-                      mx={item.path === "/" && asPath ? "auto" : ""}
-                      h="1px"
-                      bg="#fff"
-                    />
-                  )}
-                </Menu>
-              </Box>
-            </> : <>
+            <>
               {item.title === 'Tecnologia' ?
                 <>
                   <Box h="50px">
@@ -177,80 +148,58 @@ export function Header() {
           <DrawerCloseButton />
           <DrawerHeader alignItems={"center"}>
             <Flex align={"center"}>
-              <Image src={Logo.src} alt="Icone Logo" w="80px" h="60px" />
+              <Image src={Logo.src} alt="Icone Logo" w={{ base: "240px"}}
+                h={{ base: "54px" }} />
             </Flex>
           </DrawerHeader>
           <DrawerBody>
 
             {routesPath.map((item, i) => (
-              <>{
-                item.title === 'Serviços' ? <>
-                  <Box h="50px">
-                    <Menu  >
-                      <MenuButton >
-                        <Text mb="5px" cursor={"pointer"}>
-                          {item.title}
-                        </Text>
-                      </MenuButton>
-                      <MenuList >
-                        <MenuItem color='#000000' onClick={() => router.push('/services/saas')}>Saas</MenuItem>
-                        <MenuItem color='#000000' onClick={() => router.push('/services/marketplace')}>Marketplace</MenuItem>
-                      </MenuList>
-                      {item.path === asPath && (
-                        <Box
-                          w={item.path === "/" && asPath ? "80%" : "50%"}
-                          mx={item.path === "/" && asPath ? "auto" : ""}
-                          h="1px"
-                          bg="#fff"
-                        />
-                      )}
-                    </Menu>
-                  </Box>
-                </> : <>
-                  {item.title === 'Tecnologia' ?
-                    <>
-                      <Box h="50px">
-                        <Menu  >
-                          <MenuButton >
-                            <Text mb="5px" cursor={"pointer"}>
-                              {item.title}
-                            </Text>
-                          </MenuButton>
-                          <MenuList background={"#ffffff"} >
-                            <MenuItem color='#000000' onClick={() => router.push('/technology/computerVision')}>Visão Computacional</MenuItem>
-                            <MenuItem color='#000000' onClick={() => router.push('/technology/conversationalInterface')}>Interface Conversacionais</MenuItem>
-                            <MenuItem color='#000000' onClick={() => router.push('/technology/rpa')}>RPA</MenuItem>
-                          </MenuList>
-                          {item.path === asPath && (
-                            <Box
-                              w={item.path === "/" && asPath ? "80%" : "50%"}
-                              mx={item.path === "/" && asPath ? "auto" : ""}
-                              h="1px"
-                              bg="#fff"
-                            />
-                          )}
-                        </Menu>
-                      </Box>
-                    </> :
-                    <>
-                      <Link href={item.path} key={i}>
-                        <Box h="50px">
+              <>{<>
+                {item.title === 'Tecnologia' ?
+                  <>
+                    <Box h="50px">
+                      <Menu  >
+                        <MenuButton >
                           <Text mb="5px" cursor={"pointer"}>
                             {item.title}
                           </Text>
-                          {item.path === asPath && (
-                            <Box 
-                              w={item.path === "/" && asPath ? "80%" : "50%"}
-                              mx={item.path === "/" && asPath ? "auto" : ""}
-                              h="1px"
-                            />
-                          )}
-                        </Box>
-                      </Link>
-                    </>
-                  }
+                        </MenuButton>
+                        <MenuList background={"#ffffff"} >
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/computerVision')}>Visão Computacional</MenuItem>
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/conversationalInterface')}>Interface Conversacionais</MenuItem>
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/rpa')}>RPA</MenuItem>
+                        </MenuList>
+                        {item.path === asPath && (
+                          <Box
+                            w={item.path === "/" && asPath ? "80%" : "50%"}
+                            mx={item.path === "/" && asPath ? "auto" : ""}
+                            h="1px"
+                            bg="#fff"
+                          />
+                        )}
+                      </Menu>
+                    </Box>
+                  </> :
+                  <>
+                    <Link href={item.path} key={i}>
+                      <Box h="50px">
+                        <Text mb="5px" cursor={"pointer"}>
+                          {item.title}
+                        </Text>
+                        {item.path === asPath && (
+                          <Box
+                            w={item.path === "/" && asPath ? "80%" : "50%"}
+                            mx={item.path === "/" && asPath ? "auto" : ""}
+                            h="1px"
+                          />
+                        )}
+                      </Box>
+                    </Link>
+                  </>
+                }
 
-                </>
+              </>
               }
               </>
             ))}

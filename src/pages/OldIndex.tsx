@@ -140,6 +140,7 @@ export default function Home() {
               w="197px"
               color="#fff"
               mt="80px"
+              _hover={{ bg: "#F61067" }}
             >
               Saber mais
             </Button>
@@ -375,6 +376,7 @@ export default function Home() {
                 w="197px"
                 color="#fff"
                 mt={!isText ? "30px" : "50px"}
+                _hover={{ bg: "#F61067" }}
               >
                 Saber mais
               </Button>
