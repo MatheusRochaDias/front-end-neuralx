@@ -44,14 +44,14 @@ export function ContactForm() {
                   <Text color="#ADB5EA">Nome completo</Text>
                   <Input variant='flushed' placeholder='Nome' />
                 </Box>
-                 {/*<Box>
+                <Box>
                   <Text color="#ADB5EA">Telefone</Text>
                   <InputGroup>
                     <InputLeftElement children='+55' />
                     <Input variant='flushed' pl="50px" type='tel' placeholder='Telefone' />
                   </InputGroup>
                 </Box>
-
+                {/*
                 <Box py={{ base: "10px", md: "30px" }}>
                   <Text color="#ADB5EA">E-mail</Text>
                   <Input variant='flushed' placeholder='E-mail' />
