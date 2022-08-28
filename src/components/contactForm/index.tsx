@@ -37,8 +37,7 @@ export function ContactForm() {
               </Box>
             </Center>
           </GridItem>
-
-          <GridItem colSpan={[10, 11]} >
+          {/* <GridItem colSpan={[10, 11]} >
             <Box as="form" w={{ base: "100%", md: "90%" }} >
               <SimpleGrid mt={{ base: "10", md: "-60px" }} pr={{ base: "10px", md: "55px" }} pl={{ base: "10px", md: "0" }} columns={2} gap={{ base: "4", md: "10" }}>
                 <Box>
@@ -74,7 +73,7 @@ export function ContactForm() {
                 </Button>
               </Center>
             </Box>
-          </GridItem>
+          </GridItem> */}
         </SimpleGrid>
       </Box >
     </Flex >
