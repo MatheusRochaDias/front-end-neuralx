@@ -6,27 +6,25 @@ import {
   Select as ChakraSelect,
   SelectProps as ChakraSelectProps,
 } from "@chakra-ui/react";
-import { FieldError } from "react-hook-form";
 
 interface SelectProps extends ChakraSelectProps {
   name: string;
   label?: string;
   colorLabel?: string;
   widthDefault?: any;
-  error?: FieldError;
   disabled?: boolean;
-  children: ReactNode;  
-  labelFontSize?:string;
+  children: ReactNode;
+  labelFontSize?: string;
 }
 
 const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (
-  { name, label, colorLabel, widthDefault, error, disabled, labelFontSize, children, ...rest },
+  { name, label, colorLabel, widthDefault, disabled, labelFontSize, children, ...rest },
   ref
 ) => {
   return (
-    <FormControl isInvalid={!!error} w={ widthDefault || 'full' }>
+    <FormControl w={widthDefault || 'full'}>
       {!!label && (
-        <FormLabel fontWeight="bold" htmlFor={name} color={ colorLabel || "#000" } fontSize={labelFontSize} mr="0">
+        <FormLabel fontWeight="bold" htmlFor={name} color={colorLabel || "#000"} fontSize={labelFontSize} mr="0">
           {label}
         </FormLabel>
       )}
@@ -42,7 +40,6 @@ const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (
       >
         {children}
       </ChakraSelect>
-      {!!error && <FormErrorMessage>{error.message}</FormErrorMessage>}
     </FormControl>
   );
 };
