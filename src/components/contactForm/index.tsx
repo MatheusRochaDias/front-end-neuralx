@@ -40,11 +40,11 @@ export function ContactForm() {
           <GridItem colSpan={[10, 11]} >
             <Box as="form" w={{ base: "100%", md: "90%" }} >
               <SimpleGrid mt={{ base: "10", md: "-60px" }} pr={{ base: "10px", md: "55px" }} pl={{ base: "10px", md: "0" }} columns={2} gap={{ base: "4", md: "10" }}>
-                {/* <Box>
+                <Box>
                   <Text color="#ADB5EA">Nome completo</Text>
                   <Input variant='flushed' placeholder='Nome' />
                 </Box>
-                <Box>
+                 {/*<Box>
                   <Text color="#ADB5EA">Telefone</Text>
                   <InputGroup>
                     <InputLeftElement children='+55' />
