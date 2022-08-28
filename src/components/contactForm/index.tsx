@@ -1,4 +1,5 @@
-import { Box, Button, Center, Flex, GridItem, Input, InputGroup, InputLeftElement, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, GridItem, Input, InputGroup, InputLeftElement, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+
 
 export function ContactForm() {
   return (
@@ -46,12 +47,12 @@ export function ContactForm() {
                 </Box>
                 <Box>
                   <Text color="#ADB5EA">Telefone</Text>
-                  <Box>
+                  <Stack>
                     <InputGroup>
                       <InputLeftElement children='+55' />
                       <Input variant='flushed' pl="50px" type='tel' placeholder='Telefone' />
                     </InputGroup>
-                  </ Box>
+                  </ Stack>
                 </Box>
 
                 <Box py={{ base: "10px", md: "30px" }}>
