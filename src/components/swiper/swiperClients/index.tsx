@@ -21,7 +21,7 @@ export default function SwiperClients() {
   setTimeout(() => setCurrentClient(currentClient + 1), 30000)
   { currentClient === 3 && setCurrentClient(0) }
   return (
-    <Box overflowX="hidden" paddingBottom="100px" display={{ base: "none", md: "flex" }}>
+    <Box overflowX="hidden" paddingBottom="100px" display={{ base: "none", md: "block" }}>
 
       <Heading
         textAlign={"center"}
