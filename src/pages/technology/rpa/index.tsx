@@ -28,18 +28,19 @@ export default function Rpa() {
       <Layout>
         <Box
           py={{ base: "1rem", md: "3rem" }}
-          w={{ base: "100%", xl: "85%" }}
           mx={{ base: "0", md: "20px" }}
+          my={{ base: "50px", xl: "0" }}
+    
         >
           <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
             TECNOLOGIA
           </Text>
-          <Text color="#30233D" fontSize={{ base: "2rem", md: "2.813rem" }} >
+          <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} >
             RPA
           </Text>
 
-          <Text my="20px" color="#30233D" fontSize={{ base: "1rem", md: "1.688rem" }} >
-            Automação robótica de processos. Com RPA, os usuários de software criam <br />robôs de software, ou “bots”, que podem aprender, simular e executar<br /> processos de negócios baseados em regras. Pense nos “bots” como uma força de<br /> trabalho digital que pode interagir com qualquer sistema ou aplicativo.
+          <Text my="20px" color="#30233D" fontSize="1.125rem" >
+            Automação robótica de processos. Com RPA, os usuários de software criam robôs de software, ou “bots”, que podem aprender, simular e executar processos de negócios baseados em regras. Pense nos “bots” como uma força de trabalho digital que pode interagir com qualquer sistema ou aplicativo.
           </Text>
         </Box>
       </Layout>
@@ -136,7 +137,7 @@ export default function Rpa() {
                       RPA
                     </Text>
                     <Text
-                      fontSize='1rem'
+                      fontSize='1.125rem'
                       textAlign="right"
                       fontWeight="800"
                       color="#FCFCFC"
@@ -145,7 +146,6 @@ export default function Rpa() {
                       A automação de processos robóticos tem um efeito<br />  de bola de neve positivo nas operações e resultados<br />  de negócios.
                     </Text>
                     <Text
-                      fontSize='1rem'
                       textAlign="right"
                       fontWeight="400"
                       color="#FCFCFC"
@@ -170,11 +170,11 @@ export default function Rpa() {
           w={{ base: "100%", xl: "100%" }}
           mx={{ base: "0", md: "0px" }}
         >
-          <Text color="#30233D" fontSize={{ base: "2rem", md: "2.813rem" }} >
+          <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} >
             Benefícios e onde Usar
           </Text>
         </Box>
-        <SimpleGrid columns={3} py={{ base: "40px", md: '60px' }} gap={{ base: 5, md: 50 }} >
+        <SimpleGrid columns={3} py={{ base: "10px", md: '60px' }} gap={{ base: 5, md: 50 }} >
           <Box display={{ base: 'none', md: 'block' }}>
             <Image
               height={{ base: "40px", md: '70px' }}

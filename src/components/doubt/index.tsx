@@ -20,10 +20,10 @@ export function Doubt() {
       >
         <Text
           textAlign={{ base: "center", lg: "center" }}
-          fontWeight="700"
+          fontWeight="500"
           color="#FFFFFF"
           lineHeight='3.375rem'
-          fontSize='2.25rem'
+          fontSize={{ base: "1.813rem", xl: "2.813rem" }}
         >
           Ainda com dúvidas?
         </Text>
@@ -33,7 +33,7 @@ export function Doubt() {
           fontWeight="400"
           color="#FFFFFF"
           lineHeight='1.75rem'
-          fontSize='1.125rem'
+          fontSize="1.125rem"
         // my={{ base: "0", lg: !isText ? "7px" : "17px" }}
         >
           Entre em contato para tirar suas dúvidas

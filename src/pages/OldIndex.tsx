@@ -81,7 +81,7 @@ export default function Home() {
           >
             <Box w={"full"}>
               <Text color={"#fff"}>Lorem ipsum</Text>
-              <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
+              <Text fontSize={{ base: "30px", md: "2.813rem", lg: "65px" }}>
                 <Text color={"#fff"}>
                   Ganhe agilidade em{" "}
                   <span style={{ color: "#F61067" }}>
@@ -118,10 +118,10 @@ export default function Home() {
             mx={{ base: "0", md: "20px" }}
           >
             <Text color="#F61067">lorem ipsum</Text>
-            <Text color="#30233D" fontSize={"45px"} cursor={"pointer"}>
+            <Text color="#30233D" fontSize={"2.813rem"} cursor={"pointer"}>
               Lorem ipsum
             </Text>
-            <Text my="20px" color="#30233D" fontSize={"18px"}>
+            <Text my="20px" color="#30233D" fontSize={"1.125rem"}>
               Apparently we had reached a great height in the atmosphere, for
               the sky was a dead black, and the stars had ceased to twinkle.
             </Text>
@@ -334,7 +334,7 @@ export default function Home() {
               Tecnologia
             </Text>
             <Text
-              fontSize={{ base: "25px", lg: !isText ? "35px" : "45px" }}
+              fontSize={{ base: "25px", lg: !isText ? "35px" : "2.813rem3rem" }}
               textAlign={{ base: "center", lg: "right" }}
               fontWeight="500"
               color="#FCFCFC"
@@ -345,7 +345,7 @@ export default function Home() {
               {data[current].title}
             </Text>
             <Text
-              fontSize={{ base: "16px", lg: !isText ? "17.5px" : "18px" }}
+              fontSize={{ base: "16px", lg: !isText ? "17.5px" : "1.125rem" }}
               textAlign={{ base: "center", lg: "right" }}
               fontWeight="800"
               color="#FCFCFC"
@@ -359,7 +359,7 @@ export default function Home() {
             </Text>
 
             <Text
-              fontSize={{ base: "16px", lg: "18px" }}
+              fontSize={{ base: "16px", lg: "1.125rem" }}
               textAlign={{ base: "center", lg: "right" }}
               fontWeight="400"
               color="#FCFCFC"

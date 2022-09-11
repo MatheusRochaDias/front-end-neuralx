@@ -7,13 +7,14 @@ import {
   Button,
   useMediaQuery,
   Heading,
+  Center,
 } from "@chakra-ui/react";
 import Ia from "../../public/assets/IA.png";
 import User2 from "../../public/assets/user2.png";
 import User3 from "../../public/assets/user3.png";
 import { data } from "~/components/mocks/carouselServices";
 import { dataComments } from "~/components/mocks/carouselComments";
-import {  Layout } from "~/components";
+import { Layout } from "~/components";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import { loadFull } from "tsparticles";
@@ -21,7 +22,14 @@ import type { Container, Engine } from "tsparticles-engine";
 import { Footer } from "~/components/footer";
 import { ContactForm } from "~/components/contactForm";
 import router from "next/router";
+import imgVisaoComputacional from "../../public/assets/visãoComputacionalCard.png"
+import interfaceConversacionalCard from "../../public/assets/interfaceConversacionalCard.png"
+import rpaCard from "../../public/assets/rpaCard.png"
+import bigDataCard from "../../public/assets/bigDataCard.png"
+
 import HeaderContainer from "~/components/headerContainer";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import SwiperClients from "~/components/swiper/swiperClients";
 
 interface ISeries {
   name: string;
@@ -44,19 +52,77 @@ export default function Home() {
     "(min-width: 1220px)",
     "(max-width: 878px)",
   ]);
-  const particlesInit = async (main: Engine) => {
-    // console.log(main);
-    await loadFull(main);
-  };
 
-  const particlesLoaded = async (container: Container) => {
-    // console.log(container);
-  };
+  const products = [
+    {
+      title: 'Visão Computacional',
+      subTitle: <p> A visão humana possibilita a interpretação de <br />inúmeros aspectos do mundo</p>,
+      text: <p>  Essas percepções são diversas, por exemplo, ao observar<br />
+        uma árvore na rua, é possível notar diferentes aspectos da <br />
+        planta, como cores, texturas e formatos.  <br /><br />
+        A visão computacional é um dos ramos da inteligência artificial <br />
+        que estuda o processamento de imagens do mundo real por <br />um computador.<br /><br />
+        Em outras palavras, essa área investiga maneiras de dar às máquinas a<br />
+        capacidade de interpretar visualmente informações, ou seja, enxergar.<br />
+      </p>,
+      image: imgVisaoComputacional.src,
+      route: "../technology/computer-vision"
+    },
+    {
+      title: 'Interface Conversacional',
+      subTitle: <p> Acontece quando há uma conversa entre um ser humano<br /> e um bot (robô). Os bots usam técnicas de aprendizado<br /> de máquina para entender o texto e fornecer melhores <br />respostas às consultas dos usuários.</p>,
+      text: <p>  Grandes empresas já estão se movimentando em direção às <br />
+        interfaces conversacionais. <br /><br />
+        Além de serem extremamente intuitivas, elas proporcionam uma <br />
+        experiência única, que gera não apenas mais interesse, como <br />
+        também valor e engajamento superior a qualquer outro tipo de interação.<br /><br />
+        Interfaces conversacionais automatizadas permitem que marcas <br />
+        atinjam seusconsumidores de uma maneira muito mais <br />
+        escalável, pessoal, segmentada e inspiradora.
+      </p>,
+      image: interfaceConversacionalCard.src,
+      route: "../technology/conversational-interface",
+    },
+    {
+      title: 'RPA',
+      subTitle: <p>    A automação de processos robóticos tem um efeito<br />  de bola de neve positivo nas operações e resultados<br />  de negócios.</p>,
+      text: <p>  RPA oferece benefícios empresariais mensuráveis logo de cara,<br /> como redução de
+        custos, maior precisão, velocidade de entrega.<br /><br />
+        E continua a agregar valor à medida que ganha impulso e se espalha<br /> pela organização. <br /><br />
+        RPA melhora os resultados de negócios, como a satisfação do <br />cliente, e permite
+        vantagens competitivas ao liberar as pessoas para<br /> fazer o que fazem melhor, resolver problemas.
+      </p>,
+      image: rpaCard.src,
+      route: "../technology/rpa"
+    },
+    {
+      title: 'Big Data',
+      subTitle: <p>É a área do conhecimento que estuda como tratar, analisar <br /> e obter informações a partir de conjuntos de dados<br /> grandes demais para serem analisados por sistemas<br /> tradicionais.</p>,
+      text: <p>Quanto mais dados são gerados, maior é o esforço para extrair informações. <br />
+        E os centros de dados tiveram que aprender a lidar com o crescimento  <br />
+        exponencial de dados gerados e desenvolver ferramentas que fossem para além <br />
+        de bancos de dados relacionais e sistemas paralelos de bancos de dados. <br />
+        Sendo assim, a velocidade para obter a informação faz parte do sucesso  <br />
+        que o big data pode proporcionar em sua empresa.
+      </p>,
+      image: bigDataCard.src,
+      route: "../technology/big-data",
+    },
+  ];
 
-  const isWidth = window.screen.width;
+
+  const buttonPlus = () => {
+    setCurrent(current + 1)
+    { current === 3 && setCurrent(0) }
+  }
+
+  const buttonMinus = () => {
+    setCurrent(current - 1)
+    { current === 0 && setCurrent(3) }
+  }
+
   return (
     <Box w="full">
-     
       <HeaderContainer id="id" firstText="Ganhe agilidade em " secondText="seus processos internos" />
 
       <Layout>
@@ -73,10 +139,10 @@ export default function Home() {
             mx={{ base: "0", md: "20px" }}
           >
             {/* <Text color="#F61067">lorem ipsum</Text> */}
-            <Text color="#30233D" fontSize={"45px"} cursor={"pointer"}>
+            <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} cursor={"pointer"}>
               NeuralX
             </Text>
-            <Text my="20px" color="#30233D" fontSize={"18px"}>
+            <Text my="20px" color="#30233D" fontSize={"1.125rem"}>
               A NeuralX transforma tarefas manuais, lentas e desgastantes em um processo ágil, dinâmico e prático.
             </Text>
             <Text color=" #776C82">
@@ -136,144 +202,14 @@ export default function Home() {
           </Flex>
         </Flex>
       </Layout>
-      <Flex maxW="1400px" mx="auto" w={{ base: "100%", xl: "85%" }} h="full">
-        <Box display={{ base: "none", lg: "flex" }} h="full">
-          <Flex w="full" justify={"space-between"}>
-            <Flex
-              justify={"right"}
-              align="center"
-              mt={{ base: "", lg: "50px" }}
-              pr="20px"
-            >
-              <Text
-                style={{ writingMode: "vertical-lr" }}
-                // textAlign="right"
-                fontSize={"12.6px"}
-                letterSpacing={"6px"}
-                fontWeight="800"
-                color="#F61067"
-                lineHeight={"26px"}
-                textTransform="uppercase"
-                fontStyle={"normal"}
-              >
-                {data[current].title}
-              </Text>
-            </Flex>
-            <Flex
-              w="500px"
-              mt="70px"
-              mr={{ base: "-350px", xl: "-380px" }}
-              zIndex={1000}
-            >
-              <Image
-                mt={{
-                  base: "",
-                  lg: lg ? "30px" : "",
-                }}
-                src={data[current].image}
-                width={{ base: "300px", lg: lg ? "390px" : "410px", xl: "80%" }}
-                h={{ base: "450px", lg: "100%" }}
-                maxH="500px"
-                minH={"500px"}
-                alt="IA"
-              />
-            </Flex>
-          </Flex>
-          <Flex
-            // h="full"
-            // w="full"
-            color="#fff"
-            justify={"right"}
-            alignItems="center"
-            zIndex={1000}
-            mb="-800px"
-            mt={isWidth === 1358 ? "280px" : ""}
-          >
-            <Text mr="20px">{`${current + 1}/${data.length}`}</Text>
-            <Flex>
-              <Flex
-                mr="20px"
-                align={"center"}
-                justify="center"
-                w="30px"
-                h={"30px"}
-                border="1px solid #ffffff"
-                borderRadius={50}
-                p="5px"
-                cursor={"pointer"}
-                onClick={() => {
-                  if (current === 0) {
-                    setCurrent(3);
-                  }
-                  setCurrent((item) => item - 1);
-                }}
-              >
-                <FiArrowLeft color="#fff" size={20} />
-              </Flex>
-              <Flex
-                mr="20px"
-                align={"center"}
-                justify="center"
-                w="30px"
-                h={"30px"}
-                border="1px solid #ffffff"
-                borderRadius={50}
-                p="5px"
-                cursor={"pointer"}
-                onClick={() => {
-                  if (current >= data.length - 1) {
-                    setCurrent(-1);
-                  }
-                  setCurrent((item) => item + 1);
-                }}
-              >
-                <FiArrowRight color="#fff" size={20} />
-              </Flex>
-            </Flex>
-          </Flex>
-        </Box>
-        <Flex
-          bg="#30124E"
-          w="full"
-          // h={{ base: "700px", md: "500px", lg: "100%" }}
-          mb={{ base: "-100px", lg: lg ? "-120px" : "-200px", xl: "-200px" }}
-          color="#fff"
-          pl={{ base: "50px", xl: Deskt ? "0" : "81px" }}
-          p={{ base: "50px 10px", md: "50px 20px", lg: "0" }}
-          align="center"
-          zIndex={10000}
-        >
-          <Flex
-            display={{ base: "flex", lg: "none" }}
-            align={"center"}
-            justify="center"
-            w="30px"
-            h={"30px"}
-            border="1px solid #ffffff"
-            borderRadius={50}
-            p="5px"
-            cursor={"pointer"}
-            onClick={() => {
-              if (current === 0) {
-                setCurrent(3);
-              }
-              setCurrent((item) => item - 1);
-            }}
-          >
-            <FiArrowLeft color="#fff" size={20} />
-          </Flex>
-          <Box
-            // p="0px 90px 0px 30px"
-            pr={{ base: "0", lg: lg ? "30px" : xl1378 ? "60px" : "90px" }}
-            pl={{ base: "0", lg: xl1378 ? "150px" : "90px" }}
-            mt={{ base: "0", lg: "150px" }}
-            w={{ base: "full", xl: "85%" }}
-            ml={{ base: "0", xl: "auto" }}
-            zIndex={10000}
-          >
+      <Box display={{ base: "none", md: "flex" }} py="50px">
+        <Layout>
+          <Flex>
             <Text
+              my="auto"
+              style={{ writingMode: "vertical-lr" }}
+              // textAlign="right"
               fontSize={"12.6px"}
-              textAlign={{ base: "center", lg: "right" }}
               letterSpacing={"6px"}
               fontWeight="800"
               color="#F61067"
@@ -281,95 +217,108 @@ export default function Home() {
               textTransform="uppercase"
               fontStyle={"normal"}
             >
-              Tecnologia
+              {products[current].title}
             </Text>
-            <Text
-              fontSize={{ base: "25px", lg: !isText ? "35px" : "45px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="500"
-              color="#FCFCFC"
-              lineHeight={"67px"}
-              fontStyle={"normal"}
-              my={{ base: "0", lg: "17px" }}
-            >
-              {data[current].title}
-            </Text>
-            <Text
-              fontSize={{ base: "16px", lg: !isText ? "17.5px" : "18px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="800"
-              color="#FCFCFC"
-              lineHeight={"29px"}
-              fontStyle={"normal"}
-              // my={{ base: "0", lg: !isText ? "7px" : "17px" }}
-              mb={{ base: "10px", lg: !isText ? "20px" : "35px" }}
-            >
-              {data[current].subTitle} </Text>
-            <Text
-              fontSize={{ base: "16px", lg: "18px" }}
-              textAlign={{ base: "center", lg: "right" }}
-              fontWeight="400"
-              color="#FCFCFC"
-              lineHeight={"29px"}
-              fontStyle={"normal"}
-            // my={{ base: "0", lg: !isText ? "7px" : "20px" }}
-            >
-              {data[current].description}
-            </Text>
-            <br />
-            <br />
-            Clique em clique em “Saiba Mais” para ver seus benefícios e onde pode ser utilizada.
-            <Flex w="full" justify={{ base: "center", lg: "right" }}>
-              <Button
-                bg=" #3347CA"
-                borderRadius={"20px"}
-                w="197px"
-                color="#fff"
-                mt={!isText ? "30px" : "50px"}
-                onClick={() => router.push(data[current].route)}
-                _hover={{ bg: "#F61067" }}
-              >
-                Saiba Mais
-              </Button>
-            </Flex>
-          </Box>
-          <Flex
-            display={{ base: "flex", lg: "none" }}
-            align={"center"}
-            justify="center"
-            w="30px"
-            h={"30px"}
-            border="1px solid #ffffff"
-            borderRadius={50}
-            p="5px"
-            cursor={"pointer"}
-            onClick={() => {
-              if (current >= data.length - 1) {
-                setCurrent(-1);
-              }
-              setCurrent((item) => item + 1);
-            }}
-          >
-            <FiArrowRight color="#fff" size={20} />
+            <Image
+              my="auto"
+              src={products[current].image}
+              width={{ base: "300px", lg: "410px", xl: "40%" }}
+              alt="IA"
+              maxH="500px"
+              minH={"500px"}
+              zIndex={1}
+            />
+            <Box bg="#30124E" ml="-300px" >
+
+              <Box >
+                <Center
+                  ml="300"
+                  w="800px"
+                  bg="#30124E"
+                  h="100%"
+                  my="auto"
+                  minH={"600px"}
+                >
+                  <Box>
+                    <Text
+                      fontSize='2.813rem'
+                      textAlign="right"
+                      fontWeight="500"
+                      color="#FCFCFC"
+                      pb='1rem'
+                    >
+                      {products[current].title}
+                    </Text>
+                    <Text
+                      fontSize="1.125rem"
+                      textAlign="right"
+                      fontWeight="800"
+                      color="#FCFCFC"
+                      pb='1.325rem'
+                    >
+                      {products[current].subTitle}
+                    </Text>
+                    <Text
+                      textAlign="right"
+                      fontWeight="400"
+                      color="#FCFCFC"
+                    > {products[current].text}
+                      <br />
+                      <br />
+                      Clique em clique em “Saiba Mais” para ver seus benefícios e onde pode ser utilizada.
+                    </Text>
+                    <Flex pb="20px" w="full" justify={{ base: "center", lg: "right" }}>
+                      <Button
+                        bg=" #3347CA"
+                        borderRadius={"20px"}
+                        w="197px"
+                        color="#fff"
+                        mt="30px"
+
+                        onClick={() => router.push(products[current].route)}
+                        _hover={{ bg: "#F61067" }}
+                      >
+                        Saiba Mais
+                      </Button>
+                    </Flex>
+                  </Box>
+                </Center>
+              </Box>
+            </Box>
+            {/* onClick={() => setTimeout(() => { setIsLoading(true), setIsConfirmed(true) }, 3000)} */}
           </Flex>
-        </Flex>
-      </Flex>
+          <Flex mx="auto" w="80%" gap={6} py="10px" >
+            <Box onClick={buttonMinus} cursor="pointer">
+              <BsArrowLeftCircle size={27} color="#F61067" />
+            </Box>
+            <Box onClick={buttonPlus} cursor="pointer">
+              <BsArrowRightCircle size={27} color="#F61067" />
+            </Box>
+          </Flex>
+        </Layout>
+      </Box>
+      
       <Box
         w="full"
         bg="#150433"
         id="contact"
-        pt={{ base: "170px", lg: "300px" }}
+        pt={{ base: "85px", lg: "100px" }}
       >
         <Layout>
           <Box mx={{ base: "10px", lg: "" }}
             pb="40px"
           >
+
+            <SwiperClients />
+
             <Heading
+              fontSize={{ base: "1.813rem", xl: "2.813rem" }}
               textAlign={"center"}
               color="#fff"
               w={{ base: "100%", lg: "40%" }}
               mx="auto"
               mb={{ base: "20px", lg: "80px" }}
+              fontWeight="500"
             >
               Seja uma empresa adepta da Inteligência artificial
             </Heading>
@@ -469,7 +418,7 @@ export default function Home() {
               </Flex>
               <Box
                 color="#fff"
-                fontSize={{ base: "17px", lg: "24px" }}
+                fontSize="1.125rem"
                 w={{ base: "90%", lg: "70%" }}
                 mx={{ base: "5px", lg: "80px" }}
                 textAlign={"center"}

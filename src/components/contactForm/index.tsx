@@ -23,10 +23,10 @@ export function ContactForm() {
             <Center>
               <Box>
                 <Text
-                  fontWeight="700"
                   color="#F61067"
                   lineHeight='3.375rem'
-                  fontSize='2.25rem'
+                  fontSize={{ base: "1.813rem", xl: "2.813rem" }}
+                  fontWeight="500"
                 >
                   Entre em contato
                 </Text>

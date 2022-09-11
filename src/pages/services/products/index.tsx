@@ -44,7 +44,7 @@ export default function Marketplace() {
             <Text color="#30233D" fontSize={{ base: "2rem", md: "2.813rem" }} cursor={"pointer"}>
               Lorem ipsum
             </Text>
-            <Text my="20px" color="#30233D" fontSize={"18px"}>
+            <Text my="20px" color="#30233D" fontSize={"1.125rem"}>
               Apparently we had reached a great height in the atmosphere, for
               the sky was a dead black, and the stars had ceased to twinkle.
             </Text>

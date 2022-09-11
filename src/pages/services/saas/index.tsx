@@ -35,7 +35,7 @@ export default function Services() {
           >
             <Box w={"full"}>
               <Text color={"#fff"}>Lorem ipsum</Text>
-              <Text fontSize={{ base: "30px", md: "45px", lg: "65px" }}>
+              <Text fontSize={{ base: "30px", md: "2.813rem", lg: "65px" }}>
                 <Text color={"#fff"}>
                   Ganhe agilidade em{" "}
                   <span style={{ color: "#F61067" }}>

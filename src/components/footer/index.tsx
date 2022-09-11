@@ -48,7 +48,7 @@ export function Footer() {
               </Box>
               <Box pt='1.5rem'>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services/marketplace")}> Produtos </Text>
-                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../technology/computerVision")}> Tecnologia </Text>
+                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../technology/big-data")}> Tecnologia </Text>
               </Box>
             </GridItem>
             <GridItem colSpan={{ base: 20, md: 5 }}>

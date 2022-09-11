@@ -95,8 +95,9 @@ export function Header() {
                         </Text>
                       </MenuButton>
                       <MenuList background={"#ffffff99"} >
-                        <MenuItem color='#000000' onClick={() => router.push('/technology/computerVision')}>Visão Computacional</MenuItem>
-                        <MenuItem color='#000000' onClick={() => router.push('/technology/conversationalInterface')}>Interface Conversacionais</MenuItem>
+                        <MenuItem color='#000000' onClick={() => router.push('/technology/big-data')}>Big Data</MenuItem>
+                        <MenuItem color='#000000' onClick={() => router.push('/technology/computer-vision')}>Visão Computacional</MenuItem>
+                        <MenuItem color='#000000' onClick={() => router.push('/technology/conversational-interface')}>Interface Conversacionais</MenuItem>
                         <MenuItem color='#000000' onClick={() => router.push('/technology/rpa')}>RPA</MenuItem>
                       </MenuList>
                       {item.path === asPath && (
@@ -148,7 +149,7 @@ export function Header() {
           <DrawerCloseButton />
           <DrawerHeader alignItems={"center"}>
             <Flex align={"center"}>
-              <Image src={Logo.src} alt="Icone Logo" w={{ base: "240px"}}
+              <Image src={Logo.src} alt="Icone Logo" w={{ base: "240px" }}
                 h={{ base: "54px" }} />
             </Flex>
           </DrawerHeader>
@@ -166,8 +167,9 @@ export function Header() {
                           </Text>
                         </MenuButton>
                         <MenuList background={"#ffffff"} >
-                          <MenuItem color='#000000' onClick={() => router.push('/technology/computerVision')}>Visão Computacional</MenuItem>
-                          <MenuItem color='#000000' onClick={() => router.push('/technology/conversationalInterface')}>Interface Conversacionais</MenuItem>
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/big-data')}>Big Data</MenuItem>
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/computer-vision')}>Visão Computacional</MenuItem>
+                          <MenuItem color='#000000' onClick={() => router.push('/technology/conversational-interface')}>Interface Conversacionais</MenuItem>
                           <MenuItem color='#000000' onClick={() => router.push('/technology/rpa')}>RPA</MenuItem>
                         </MenuList>
                         {item.path === asPath && (

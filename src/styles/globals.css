@@ -69,6 +69,20 @@ a {
   background-attachment: fixed;
   position: relative;
 }
+#bigData {
+  background-image: linear-gradient(
+      90deg,
+      #150433 1.89%,
+      rgba(0, 0, 0, 0.37) 133.64%
+    ),
+    linear-gradient(90deg, #5e239d 0%, rgba(196, 196, 196, 0) 56.77%),
+    url("../../public/assets/bigData.png");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
 #conversationalInterface {
   background-image: url("../../public/assets/conversationalInterfaceImage.png");
   background-size: cover;
@@ -77,7 +91,7 @@ a {
   background-attachment: fixed;
   position: relative;
 }
-#products{
+#products {
   background-image: url("../../public/assets/productsPage.png");
   background-size: cover;
   background-position: 50% 60%;
