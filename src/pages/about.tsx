@@ -182,7 +182,7 @@ export default function About() {
         </Layout>
 
       </Box>
-      <Box py={{ base: "20px", md: "100px" }} display={{ base: "none", md: "flex" }}>
+      <Box py={{ base: "20px", md: "100px" }} display={{ base: "none", md: "block" }}>
         <Text color="#F61067" textAlign='center' fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
           CONHEÇA NOSSO TIME DE COLABORADORES
         </Text>
