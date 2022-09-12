@@ -137,7 +137,9 @@ export default function Home() {
             flexDir={"column"}
             w={{ base: "100%", xl: "40%" }}
             mx={{ base: "0", md: "20px" }}
-          >
+          > <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
+          HOME
+        </Text>
             {/* <Text color="#F61067">lorem ipsum</Text> */}
             <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} cursor={"pointer"}>
               NeuralX
@@ -235,6 +237,7 @@ export default function Home() {
                   ml="300"
                   w="800px"
                   bg="#30124E"
+                  py="30px"
                   h="100%"
                   my="auto"
                   minH={"600px"}

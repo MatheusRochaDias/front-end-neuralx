@@ -38,7 +38,7 @@ export function Footer() {
               <Box pt='1.5rem'>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../")}> Home </Text>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../about")}> Quem somos </Text>
-                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services")}> Serviços </Text>
+                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services/neural-analytics")}> Serviços </Text>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../contact")}> Contato </Text>
               </Box>
             </GridItem>
@@ -47,7 +47,7 @@ export function Footer() {
                 <Text color='#FCFCFC' fontSize='1rem' letterSpacing='0.375rem' lineHeight='1.638rem'>SERVIÇOS</Text>
               </Box>
               <Box pt='1.5rem'>
-                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services/marketplace")}> Produtos </Text>
+                <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../services/neural-analytics")}> Produtos </Text>
                 <Text color='#FCFCFC' py='0.5rem' fontSize='1rem' fontWeight='700' letterSpacing='0.063rem' lineHeight='1.75rem' cursor="pointer" onClick={() => router.push("../../technology/big-data")}> Tecnologia </Text>
               </Box>
             </GridItem>

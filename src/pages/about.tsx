@@ -6,42 +6,106 @@ import {
   Image,
   SimpleGrid,
   Center,
+  Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
-import { Header, Layout } from "~/components";
-import { BsArrowRight } from "react-icons/bs";
+import { Layout } from "~/components";
+import Ia from "../../public/assets/IA.png";
 import peopleAboutPage from "../../public/assets/peopleAboutPage.png"
-import func1 from "../../public/assets/func1.png"
-import func2 from "../../public/assets/func2.png"
-import func3 from "../../public/assets/func3.png"
-import func4 from "../../public/assets/func4.png"
-import func5 from "../../public/assets/func5.png"
 import { Footer } from "~/components/footer";
 import { Doubt } from "~/components/doubt";
 import HeaderContainer from "~/components/headerContainer";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 
 export default function About() {
+  const [isLarger, Deskt, xl, lg, xl1378, isText, smQuote] = useMediaQuery([
+    "(min-width: 1320px)",
+    "(max-width: 1350px)",
+    "(max-width: 1400px)",
+    "(max-width: 1036px)",
+    "(max-width: 1378px)",
+    "(min-width: 1220px)",
+    "(max-width: 878px)",
+  ]);
   return (
     <Box w="full">
       <HeaderContainer id="about" firstText="Somos uma Startup " secondText="de Inteligência Artificial" />
       <Layout>
-        <Box
-          pt="3rem"
-          w={{ base: "100%", xl: "85%" }}
-          mx={{ base: "0", md: "20px" }}
+        <Flex
+          w="full"
+          justify={"space-between"}
+          mt="50px"
+          mb={{ base: "0", xl: "-150px" }}
+          flexDir={{ base: "column", lg: "row" }}
         >
-          <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
-            QUEM SOMOS
-          </Text>
-          <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} >
-            Somos uma Startup de Inteligência artificial
-          </Text>
+          <Flex
+            flexDir={"column"}
+            w={{ base: "100%", xl: "60%" }}
+            mx={{ base: "0", md: "20px" }}
+          > <Text color="#F61067" fontWeight='800' letterSpacing='0.375rem' fontSize='0.75rem'>
+              QUEM SOMOS
+            </Text>
+            {/* <Text color="#F61067">lorem ipsum</Text> */}
+            <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} cursor={"pointer"}>
+              Somos uma Startup de Inteligência artificial
+            </Text>
+            <Text my="20px" color="#30233D" fontSize={"1.125rem"}>
+              Criada no ano 2018, na cidade de Balneário Camboriú, com o propósito de solucionar problemas relacionados a rotinas de escritórios de contabilidade e de advocacia, tendo como principal objetivo fazer com que nossos clientes consigam dinamismo e velocidade em seus processos internos, fazendo assim, com que eles tenham mais tempo para conseguirem novos clientes e desta forma crescerem mais.
+            </Text>
+            <Button
+              bg=" #3347CA"
+              borderRadius={"20px"}
+              w="197px"
+              color="#fff"
+              mt="80px"
+              _hover={{ bg: "#F61067" }}
+            >
+              Saber mais
+            </Button>
+          </Flex>
+          <Flex
+            w="full"
+            justify={{ base: "center", lg: "right" }}
+            mt={{ base: "20px", lg: "0px" }}
+          >
+            <Box zIndex={1000} mt={{ base: "30px", md: "40px" }}>
+              <Image
+                src={Ia.src}
+                width={{ base: "70%", lg: "full" }}
+                h={{ base: "90%", lg: "80%" }}
+                alt="IA"
+              />
+            </Box>
+            <Flex
+              justify={"center"}
+              flexDir="column"
+              align="center"
+              bg="#5E239D"
+              h={{ base: "200px", sm: "300px", lg: "60%" }}
+              ml={{
+                base: "-125px",
+                sm: "-215px",
+                lg: "-35px",
+                xl: "-70px",
+              }}
+              w={{ base: "", sm: "300px", xl: "45%" }}
+            >
+              <ImQuotesLeft size={smQuote ? 18 : 50} color="#f4f4ed9f" />
 
-          <Text my="20px" color="#30233D" fontSize="1.125rem" >
-            Criada no ano 2018, na cidade de Balneário Camboriú, com o propósito de solucionar problemas relacionados a rotinas de escritórios de contabilidade e de advocacia, tendo como principal objetivo fazer com que nossos clientes consigam dinamismo e velocidade em seus processos internos, fazendo assim, com que eles tenham mais tempo para conseguirem novos clientes e desta forma crescerem mais.
-          </Text>
-        </Box>
+              <Text
+                color="#fff"
+                px={{ base: "20px", md: "50px", xl: "100px" }}
+                ml={{ base: "60px", sm: "80px", xl: "50px" }}
+                fontSize={{ base: "15px", md: "20px", xl: "30px" }}
+                my="10px"
+              >
+                Torne-se mais competitivo e eficiente
+              </Text>
+              <ImQuotesRight size={smQuote ? 18 : 50} color="#f4f4ed9f" />
+            </Flex>
+          </Flex>
+        </Flex>
       </Layout>
-
       <Flex bg="#5E239D" mt="60px" py="40px" display={{ base: "flex", md: "none" }}>
         <Box px="15px">
           <Text
@@ -83,7 +147,7 @@ export default function About() {
           </Text>
         </Box>
       </Flex>
-      <Flex bg="#150433"  py="40px" display={{ base: "flex", md: "none" }}>
+      <Flex bg="#150433" py="40px" display={{ base: "flex", md: "none" }}>
         <Box px="15px">
           <Text
             fontSize='1rem'
@@ -99,8 +163,8 @@ export default function About() {
             fontWeight="400"
             color="#FCFCFC"
           >
-              Trabalhamos com simplicidade, transparência, inovação e democratização da tecnologia.
-            </Text>
+            Trabalhamos com simplicidade, transparência, inovação e democratização da tecnologia.
+          </Text>
         </Box>
       </Flex>
       <Box bg='#FFFFFF' h={{ base: "160px", md: '244px' }} display={{ base: "none", md: "block" }} py='70px' >

@@ -15,11 +15,11 @@ export default function SwiperClients() {
   
   const buttonPlus = () => {
     setCurrentClient(currentClient + 1)
-    { currentClient === 3 && setCurrentClient(0) }
+    { currentClient === 2 && setCurrentClient(0) }
   }
 
   setTimeout(() => setCurrentClient(currentClient + 1), 30000)
-  { currentClient === 3 && setCurrentClient(0) }
+  { currentClient === 2 && setCurrentClient(0) }
   return (
     <Box overflowX="hidden" paddingBottom="100px" display={{ base: "none", md: "block" }}>
 
@@ -44,18 +44,18 @@ export default function SwiperClients() {
               <Center gap="40">
                 <Box>
                   <Image
-                    src={Logo.src}
+                    src={"https://wedev.software/wp-content/uploads/2021/06/logo-branco-1.svg"}
                     w="250px"
                     h="54px"
-                    alt="Logo do neuralX"
+                    alt="Logo do WeDevSoftware"
                   />
                 </Box>
                 <Box>
                   <Image
-                    src={Logo.src}
+                    src={"https://mellro.com/images/logo_color.png"}
                     w="250px"
                     h="54px"
-                    alt="Logo do neuralX"
+                    alt="Logo Mellro"
                   />
                 </Box>
               </Center>
@@ -66,45 +66,24 @@ export default function SwiperClients() {
               <Center gap="40">
                 <Box>
                   <Image
-                    src={Logo.src}
+                    src={"https://mlxyjcueu5ka.i.optimole.com/tRhEIvs-w3gX9CT1/w:568/h:122/q:auto/https://wedev.group/wp-content/uploads/2022/02/logo-wedev-group-normal.svg"}
                     w="250px"
                     h="54px"
-                    alt="Logo do neuralX"
+                    alt="Logo WeDev Group"
                   />
                 </Box>
                 <Box>
                   <Image
-                    src={Logo.src}
+                    src={"https://iholdbank.digital/wp-content/uploads/2021/07/Logo-iHold-Light.svg"}
                     w="250px"
                     h="54px"
-                    alt="Logo do neuralX"
+                    alt="Logo IHold"
                   />
                 </Box>
               </Center>
             </SlideFade >
           }
-          {currentClient === 2 && <SlideFade offsetX='100%' in={currentClient === 2} >
-            <Center gap="40">
-              <Box>
-                <Image
-                  src={Logo.src}
-                  w="250px"
-                  h="54px"
-                  alt="Logo do neuralX"
-                />
-              </Box>
-              <Box>
-                <Image
-                  src={Logo.src}
-                  w="250px"
-                  h="54px"
-                  alt="Logo do neuralX"
-                />
-              </Box>
-            </Center>
-          </SlideFade >
-          }
-        </Center>
+                </Center>
         <Center cursor="pointer">
           <BsArrowRightCircle size={40} color="#FFF" onClick={buttonPlus} />
         </Center>

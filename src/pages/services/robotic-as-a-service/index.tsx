@@ -15,9 +15,9 @@ import { Footer } from "~/components/footer";
 import { Doubt } from "~/components/doubt";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import HeaderContainer from "~/components/headerContainer";
-import atom from "../../../public/assets/atom.png"
-import graphMarketplace from "../../../public/assets/graphMarketplace.png"
-import Ia from "../../../public/assets/IA.png"
+import atom from "../../../../public/assets/atom.png"
+import graphMarketplace from "../../../../public/assets/graphMarketplace.png"
+import robots_as_services_body from "../../../../public/assets/robots_as_services_body.png"
 import router from "next/router";
 
 
@@ -39,7 +39,6 @@ export default function Marketplace() {
           w="full"
           justify={"space-between"}
           mt={{ base: "0", md: "50px" }}
-          mb={{ base: "0", xl: "-150px" }}
           flexDir={{ base: "column", lg: "row" }}
         >
           <Flex
@@ -49,7 +48,7 @@ export default function Marketplace() {
             my={{ base: "50px", xl: "0" }}
           >
             <Text color="#F61067">lorem ipsum</Text>
-            <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }}  cursor={"pointer"}>
+            <Text color="#30233D" fontSize={{ base: "1.813rem", xl: "2.813rem" }} cursor={"pointer"}>
               Lorem ipsum
             </Text>
             <Text my="20px" color="#30233D" fontSize={"1.125rem"}>
@@ -83,9 +82,9 @@ export default function Marketplace() {
           >
             <Box zIndex={1000} mt={{ base: "30px", md: "40px" }}>
               <Image
-                src={Ia.src}
+                src={robots_as_services_body.src}
                 width={{ base: "70%", lg: "full" }}
-                h={{ base: "90%", lg: "80%" }}
+                h={{ base: "90%", lg: "100%" }}
                 alt="IA"
               />
             </Box>
@@ -269,7 +268,7 @@ export default function Marketplace() {
         </Center>
       </Layout>
       <Box
-         pt="1rem"
+        pt="1rem"
         w="100%"
         display={{ base: 'none', md: 'grid' }}>
         <Layout >
@@ -279,7 +278,7 @@ export default function Marketplace() {
             </Text>
           </Box>
           <Box>
-            <SimpleGrid  columns={6} py={{ base: "40px", md: '60px' }} gap={{ base: 5, md: 50 }}>
+            <SimpleGrid columns={6} py={{ base: "40px", md: '60px' }} gap={{ base: 5, md: 50 }}>
               <GridItem colSpan={2}>
                 <Image
                   height={{ base: "40px", md: '70px' }}
@@ -307,7 +306,7 @@ export default function Marketplace() {
                 <Text color="#30233D" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
                   O RPA fica disponível 24/7 , totalmente adaptável as<br /> suas necessidades e demandas de trabalho, nunca<br /> perdendo a performance e executando perfeitamente as <br />tarefas que foi programado para executar.
                 </Text>
-                </GridItem >
+              </GridItem >
 
               <GridItem colSpan={2}>
                 <Image
@@ -320,9 +319,9 @@ export default function Marketplace() {
                 <Text color="#30233D" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
                   Processos muito repetitivos levam a erros operacionais<br />  com maior facilidade. O RPA é capaz de reduzir<br />  esses erros a zero, melhorando a performance dos<br />  seus processos e permitindo que seus colaboradores se <br /> ocupem com tarefas mais importantes e estratégicas para <br /> impulsionar o seu negócio.
                 </Text>
-                </GridItem >
+              </GridItem >
 
-                <GridItem colSpan={3}>
+              <GridItem colSpan={2}>
                 <Image
                   height={{ base: "40px", md: '70px' }}
                   src={atom.src}
@@ -334,9 +333,9 @@ export default function Marketplace() {
                   Por ser tratar de um processo automatizado, o RPA consegue executar suas tarefas de forma perfeita, sem perder a qualidade e além de tudo com uma velocidade e uma acurácia muito maior do que um ser humano é capaz de executar, podendo reduzir os custos operacionais da sua empresa e consequentemente dar muito mais escala nos processos de trabalho gerando assim um aumento significativo de receita.
 
                 </Text>
-                </GridItem >
+              </GridItem >
 
-              <GridItem colSpan={3}>
+              <GridItem colSpan={2}>
                 <Image
                   height={{ base: "40px", md: '70px' }}
                   src={atom.src}
@@ -347,9 +346,22 @@ export default function Marketplace() {
                 <Text color="#30233D" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
                   O RPA é totalmente customizável as suas necessidades e totalmente integrável a qualquer setor da sua empresa, permitindo levar a automatização para qualquer fluxo de trabalho, inclusive fluxos que utilizam softwares de terceiros.
                 </Text>
-                </GridItem >
+              </GridItem >
+              
+              <GridItem colSpan={2}>
+                <Image
+                  height={{ base: "40px", md: '70px' }}
+                  src={atom.src}
+                />
+                <Text py='15px' color="#30233D" fontWeight='500' lineHeight='2.5rem' fontSize={{ base: "1.1rem", md: "1.688rem" }}>
+                  Customização
+                </Text>
+                <Text color="#30233D" fontWeight='400' lineHeight={{ base: "1.2rem", md: '1.625rem' }} fontSize={{ base: "0.8rem", md: '1rem' }}>
+                  O RPA é totalmente customizável as suas necessidades e totalmente integrável a qualquer setor da sua empresa, permitindo levar a automatização para qualquer fluxo de trabalho, inclusive fluxos que utilizam softwares de terceiros.
+                </Text>
+              </GridItem >
             </SimpleGrid>
-           
+
           </Box>
         </Layout>
       </Box>

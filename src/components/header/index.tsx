@@ -110,25 +110,49 @@ export function Header() {
                       )}
                     </Menu>
                   </Box>
-                </> :
-                <>
-                  <Link href={item.path} key={i}>
-                    <Box h="50px">
-                      <Text mb="5px" cursor={"pointer"}>
-                        {item.title}
-                      </Text>
-                      {item.path === asPath && (
-                        <Box
-                          w={item.path === "/" && asPath ? "80%" : "50%"}
-                          mx={item.path === "/" && asPath ? "auto" : ""}
-                          h="1px"
-                          bg="#fff"
-                        />
-                      )}
-                    </Box>
-                  </Link>
-                </>
-              }
+                </> : <>
+                  {item.title === 'Serviços' ?
+                    <>
+                      <Box h="50px">
+                        <Menu  >
+                          <MenuButton >
+                            <Text mb="5px" cursor={"pointer"}>
+                              {item.title}
+                            </Text>
+                          </MenuButton>
+                          <MenuList background={"#ffffff99"} >
+                            <MenuItem color='#000000' onClick={() => router.push('/services/robotic-as-a-service')}>Robotic as a service</MenuItem>
+                            <MenuItem color='#000000' onClick={() => router.push('/services/neural-analytics')}>Neural analytics</MenuItem>
+                          </MenuList>
+                          {item.path === asPath && (
+                            <Box
+                              w={item.path === "/" && asPath ? "80%" : "50%"}
+                              mx={item.path === "/" && asPath ? "auto" : ""}
+                              h="1px"
+                              bg="#fff"
+                            />
+                          )}
+                        </Menu>
+                      </Box>
+                    </> :
+                    <>
+                      <Link href={item.path} key={i}>
+                        <Box h="50px">
+                          <Text mb="5px" cursor={"pointer"}>
+                            {item.title}
+                          </Text>
+                          {item.path === asPath && (
+                            <Box
+                              w={item.path === "/" && asPath ? "80%" : "50%"}
+                              mx={item.path === "/" && asPath ? "auto" : ""}
+                              h="1px"
+                              bg="#fff"
+                            />
+                          )}
+                        </Box>
+                      </Link>
+                    </>
+                  }</>}
 
             </>
           }
@@ -182,24 +206,47 @@ export function Header() {
                         )}
                       </Menu>
                     </Box>
-                  </> :
-                  <>
-                    <Link href={item.path} key={i}>
-                      <Box h="50px">
-                        <Text mb="5px" cursor={"pointer"}>
-                          {item.title}
-                        </Text>
-                        {item.path === asPath && (
-                          <Box
-                            w={item.path === "/" && asPath ? "80%" : "50%"}
-                            mx={item.path === "/" && asPath ? "auto" : ""}
-                            h="1px"
-                          />
-                        )}
+                  </> : <>{
+                    item.title === 'Serviços' ?
+                      <> <Box h="50px">
+                        <Menu  >
+                          <MenuButton >
+                            <Text mb="5px" cursor={"pointer"}>
+                              {item.title}
+                            </Text>
+                          </MenuButton>
+                          <MenuList background={"#ffffff"} >
+                            <MenuItem color='#000000' onClick={() => router.push('/services/robotic-as-a-service')}>Robotic as a service</MenuItem>
+                            <MenuItem color='#000000' onClick={() => router.push('/services/neural-analytics')}>Neural analytics</MenuItem>
+                          </MenuList>
+                          {item.path === asPath && (
+                            <Box
+                              w={item.path === "/" && asPath ? "80%" : "50%"}
+                              mx={item.path === "/" && asPath ? "auto" : ""}
+                              h="1px"
+                              bg="#fff"
+                            />
+                          )}
+                        </Menu>
                       </Box>
-                    </Link>
-                  </>
-                }
+                      </> :
+                      <>
+                        <Link href={item.path} key={i}>
+                          <Box h="50px">
+                            <Text mb="5px" cursor={"pointer"}>
+                              {item.title}
+                            </Text>
+                            {item.path === asPath && (
+                              <Box
+                                w={item.path === "/" && asPath ? "80%" : "50%"}
+                                mx={item.path === "/" && asPath ? "auto" : ""}
+                                h="1px"
+                              />
+                            )}
+                          </Box>
+                        </Link>
+                      </>
+                  }</>}
 
               </>
               }

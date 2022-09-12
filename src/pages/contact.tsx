@@ -30,9 +30,6 @@ export default function Contact() {
             w={{ base: "80%", lg: "70%", xl: "50%" }}
           >
             <Box w={"full"} h='300px'>
-              <Text fontSize='3.375rem' color="#F61067">
-                Contato
-              </Text>
             </Box>
           </Box>
         </Layout>
